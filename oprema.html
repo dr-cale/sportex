@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Sportex Arilje - Oprema</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon-32x32.png" rel="icon">
+  <link href="assets/img/favicon-32x32.png" rel="apple-touch-icon">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Dosis:300,400,500,,600,700,700i|Lato:300,300i,400,400i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- JQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+  <!-- AOS - Animate On Scroll -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <style>
+    header {
+      position: sticky !important;
+    }
+    main {
+      width: 100%;
+      /*height: 80vh;*/
+      min-height: 100vh;
+      /*background: url(../img/bkg/white-1.jpg), #f9f9f9;*/
+    }
+
+    main::before {
+      content: "";
+      position: absolute;
+      top: 0; 
+      left: 0;
+      width: 100%; 
+      height: 100%;  
+      opacity: .4; 
+      z-index: -1;
+      background: url(../img/bkg/white-1.jpg) !important;
+    }
+
+    .section-title p {
+      width: 70%;
+      margin-left: 15%;
+    }
+
+    .contact .php-email-form textarea {
+      min-height: 200px !important;
+    }
+
+    main a:visited, main a:link {
+      color: inherit !important;
+      text-decoration: none !important;
+    }
+
+    main p {
+      color: black !important;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo"><img src="assets/img/logos/logo-3.png" alt="" class="img-fluid"></a>
+      <!-- Uncomment below if you prefer to use text as a logo -->
+      <!-- <h1 class="logo"><a href="index.html">Butterfly</a></h1> -->
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto" href="index.html#hero">Početna</a></li>
+          <li><a class="nav-link scrollto" href="index.html#about">O nama</a></li>
+          <li><a class="nav-link scrollto" href="index.html#services">Usluge</a></li>
+          <li><a class="nav-link scrollto " href="index.html#gallery">Mini galerija</a></li>
+          <li class="dropdown"><a href="oprema.html" class="nav-link active"><span>Oprema</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="oprema.html">Oprema - početna</a></li>
+              <li><a href="sports/football.html">Američki fudbal</a></li>
+              <li><a href="sports/basketball.html">Košarka</a></li>
+              <li><a href="sports/rugby.html">Ragbi</a></li>
+              <li><a href="sports/soccer.html">Fudbal</a></li>
+              <li><a href="sports/volleyball.html">Odbojka</a></li>
+              <li><a href="sports/handball.html">Rukomet</a></li>
+              <li><a href="sports/misc.html">Razno</a></li>
+            </ul>
+          </li>
+          <li><a class="nav-link scrollto" href="kontakt.html">Kontakt</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+
+    <!-- ======= Contact Section ======= -->
+    <section id="oprema" class="oprema">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Oprema</h2>
+          <p>Odaberite željenu oblast da biste ušli u galeriju.</p>
+        </div>
+
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+          <div class="col" data-aos="zoom-in" data-aos-easing="ease-in-back" data-aos-delay="100" data-aos-duration="1000">
+            <div class="card" onclick="location.href='sports/soccer.html';">
+              <img src="assets/img/oprema/soccer.png" class="card-img-top"
+                alt="Soccer" width="80%" height="400px" />
+              <div class="card-body">
+                <h2 class="card-title text-center">Fudbal</h2>
+              </div>
+            </div>
+          </div>
+          <div class="col" data-aos="zoom-in" data-aos-easing="ease-in-back" data-aos-delay="100" data-aos-duration="1100">
+            <div class="card" onclick="location.href='sports/football.html';">
+              <img src="assets/img/oprema/football.png" class="card-img-top"
+                alt="American football" width="80%" height="400px" style="padding: 70px !important;" />
+              <div class="card-body">
+                <h2 class="card-title text-center">Američki fudbal</h2>
+              </div>
+            </div>
+          </div>
+          <div class="col" data-aos="zoom-in" data-aos-easing="ease-in-back" data-aos-delay="100" data-aos-duration="1200">
+            <div class="card" onclick="location.href='sports/volleyball.html';">
+              <img src="assets/img/oprema/volleyball.png" class="card-img-top"
+                alt="Volleyball" width="80%" height="400px" style="padding: 70px !important;" />
+              <div class="card-body">
+                <h2 class="card-title text-center">Odbojka</h2>
+              </div>
+            </div>
+          </div>
+          <div class="col" data-aos="zoom-in" data-aos-easing="ease-in-back" data-aos-delay="100" data-aos-duration="1300">
+            <div class="card" onclick="location.href='sports/basketball.html';">
+              <img src="assets/img/oprema/basketball.png" class="card-img-top"
+                alt="Basketball" width="80%" height="400px" style="padding: 60px !important;"/>
+              <div class="card-body">
+                <h2 class="card-title text-center">Košarka</h2>
+              </div>
+            </div>
+          </div>
+          <div class="col" data-aos="zoom-in" data-aos-easing="ease-in-back" data-aos-delay="100" data-aos-duration="1400">
+            <div class="card" onclick="location.href='sports/rugby.html';">
+              <img src="assets/img/oprema/rugby.png" class="card-img-top"
+                alt="Rugby" width="80%" height="400px" />
+              <div class="card-body">
+                <h2 class="card-title text-center">Ragbi</h2>
+              </div>
+            </div>
+          </div>
+          <div class="col" data-aos="zoom-in" data-aos-easing="ease-in-back" data-aos-delay="100" data-aos-duration="1500">
+            <div class="card" onclick="location.href='sports/handball.html';">
+              <img src="assets/img/oprema/handball.png" class="card-img-top"
+                alt="Handball" width="80%" height="400px"/>
+              <div class="card-body">
+                <h2 class="card-title text-center">Rukomet</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col col-md-4">
+          <div class="card" onclick="location.href='sports/misc.html';">
+            <img src="assets/img/oprema/misc.png" class="card-img-top"
+              alt="Handball" width="80%" height="400px"/>
+            <div class="card-body">
+              <h2 class="card-title text-center">Razno</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="mt-2">
+
+    <div class="footer-top justify-content-center">
+      <div class="container">
+        <div class="row justify-content-center">
+
+          <div class="col-12 col-md-6 footer-links justify-content-center text-center">
+            <h3>KAKO DO NAS</h3>
+            <p>Obratite nam se putem mejla, telefona, Instagrama ili Facebook-a.</p>
+            <div class="social-links mt-4">
+              <a href="mailto:sportexdragan@gmail.com" class="email"><i class="fa-regular fa-envelope"></i></a>
+              <a href="tel:+381063691711" class="phone"><i class="fa-solid fa-phone"></i></a>
+              <a href="https://www.instagram.com/stx_sportskaoprema/" class="instagram"><i class="bx bxl-instagram"></i></a>
+              <a href="https://www.facebook.com/sportex.rs" class="facebook"><i class="bx bxl-facebook"></i></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid row align-items-center py-4">
+      <div class="copyright col-md-6 text-center">
+        &copy; Copyright <strong><span>Sportex Arilje</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits col-md-6 text-center">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/butterfly-free-bootstrap-theme/ -->
+        Designed by <strong>Sportex Arilje</strong>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/index.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
+</body>
+
+</html>

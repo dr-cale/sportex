@@ -339,7 +339,7 @@ h6 {
   left: 0;
   width: 100%; 
   height: 100%;  
-  opacity: .3; 
+  opacity: .4; 
   z-index: -1;
   background: url(../img/bkg/white-1.jpg);
 }
@@ -358,12 +358,12 @@ h6 {
 }
 
 #hero h2 {
-  color: #1c698c;
+  color: #121212;
   margin: 10px 0 0 0;
   font-size: 20px;
 }
 
-#hero .btn-get-started {
+#hero .btn-get-started, #gallery .btn-get-started {
   font-family: "Dosis", sans-serif;
   font-weight: 500;
   font-size: 16px;
@@ -417,10 +417,6 @@ section {
   overflow: hidden;
 }
 
-.section-bg {
-  background-color: #f4fbfe;
-}
-
 .section-title {
   text-align: center;
   padding-bottom: 30px;
@@ -442,6 +438,10 @@ section {
 /*--------------------------------------------------------------
 # About
 --------------------------------------------------------------*/
+#about {
+  background-color: #f1f1f1;
+}
+
 .about .icon-boxes h3 {
   font-size: 28px;
   font-weight: 700;
@@ -502,7 +502,7 @@ section {
 }
 
 .about .video-box {
-  background: url("../img/about.jpg") center center no-repeat;
+  background: url("../img/dresovi-stx.png") center center no-repeat;
   background-size: cover;
   min-height: 500px;
 }
@@ -597,7 +597,7 @@ section {
 # Counts
 --------------------------------------------------------------*/
 .counts {
-  background: url("../img/counts-bg.jpg") center center no-repeat;
+  background: url("../img/counts-bg-2.webp") center center no-repeat;
   background-size: cover;
   padding: 80px 0 60px 0;
   position: relative;
@@ -683,6 +683,19 @@ section {
 /*--------------------------------------------------------------
 # Services
 --------------------------------------------------------------*/
+.section-bg {
+  position: relative;
+}
+
+.services-bg {
+  opacity: 0.2;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: auto;
+}
+
 .services .icon-box {
   padding: 30px;
   position: relative;
@@ -700,7 +713,7 @@ section {
 
 .services .icon {
   position: absolute;
-  left: -20px;
+  left: -25px;
   top: calc(50% - 30px);
 }
 
@@ -708,6 +721,11 @@ section {
   font-size: 64px;
   line-height: 1;
   transition: 0.5s;
+}
+
+#services .section-title {
+  z-index: 5 !important;
+  position: relative;
 }
 
 .services .title {
@@ -730,6 +748,7 @@ section {
   margin-left: 40px;
   line-height: 24px;
   margin-bottom: 0;
+  padding-right: 30px;
 }
 
 /*--------------------------------------------------------------
@@ -958,7 +977,7 @@ section {
 --------------------------------------------------------------*/
 .testimonials {
   padding: 80px 0;
-  background: url("../img/cta-bg.jpg") no-repeat;
+  background: url("../img/sports-requisites.jpg") no-repeat;
   background-position: center center;
   background-size: cover;
   position: relative;
@@ -971,7 +990,7 @@ section {
   right: 0;
   top: 0;
   bottom: 0;
-  background: rgba(11, 41, 55, 0.9);
+  background: rgba(11, 41, 55, 0.8);
 }
 
 .testimonials .section-header {
@@ -989,9 +1008,10 @@ section {
 }
 
 .testimonials .testimonial-item .testimonial-img {
-  width: 100px;
-  border-radius: 50%;
-  border: 6px solid rgba(255, 255, 255, 0.15);
+  width: 300px;
+  height: 300px;
+  /*border-radius: 50%;
+  border: 6px solid rgba(255, 255, 255, 0.15);*/
   margin: 0 auto;
 }
 
@@ -1138,14 +1158,19 @@ section {
 /*--------------------------------------------------------------
 # Gallery
 --------------------------------------------------------------*/
+#gallery .col-lg-3.col-md-4 {
+  margin-bottom: 20px;
+}
+
 .gallery .gallery-item {
   overflow: hidden;
-  border-right: 3px solid #fff;
-  border-bottom: 3px solid #fff;
+  border-radius: 5px;
+  box-shadow: 2px 2px 4px #999;
 }
 
 .gallery .gallery-item img {
   transition: all ease-in-out 0.4s;
+  height: 220px;
 }
 
 .gallery .gallery-item:hover img {
@@ -1166,7 +1191,8 @@ section {
   float: left;
   width: 44px;
   height: 44px;
-  background: #ebf7fc;
+  background: #fff;
+  border: 2px solid #b22222;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1277,7 +1303,7 @@ section {
 }
 
 .contact .php-email-form button[type=submit]:hover {
-  background: #1da2e0;
+  background: #000;
 }
 
 @keyframes animate-loading {
@@ -1350,10 +1376,14 @@ section {
 --------------------------------------------------------------*/
 #footer {
   background: #fff;
-  padding: 0 0 30px 0;
+  padding: 0;
   color: #444444;
   font-size: 14px;
   background: #ebf7fc;
+}
+
+#footer .container-fluid {
+  background-color: #fff;
 }
 
 #footer .footer-newsletter {
@@ -1405,12 +1435,12 @@ section {
 }
 
 #footer .footer-newsletter form input[type=submit]:hover {
-  background: #1da2e0;
+  background: #000;
 }
 
 #footer .footer-top {
   padding: 60px 0 30px 0;
-  background: #fff;
+  background: #f1f1f1;
 }
 
 #footer .footer-top .footer-contact {
@@ -1426,15 +1456,15 @@ section {
 }
 
 #footer .footer-top .footer-contact p {
-  font-size: 14px;
+  font-size: 18px;
   line-height: 24px;
   margin-bottom: 0;
   font-family: "Lato", sans-serif;
   color: #777777;
 }
 
-#footer .footer-top h4 {
-  font-size: 16px;
+#footer .footer-top h3 {
+  font-size: 25px;
   font-weight: bold;
   color: #0f394c;
   position: relative;
@@ -1443,6 +1473,10 @@ section {
 
 #footer .footer-top .footer-links {
   margin-bottom: 30px;
+}
+
+#footer .footer-top .footer-links p {
+  font-size: 18px;
 }
 
 #footer .footer-top .footer-links ul {
@@ -1481,18 +1515,29 @@ section {
 }
 
 #footer .footer-top .social-links a {
-  font-size: 18px;
+  font-size: 30px;
   display: inline-block;
   background: #b22222;
   color: #fff;
   line-height: 1;
-  padding: 8px 0;
-  margin-right: 4px;
+  padding: 10px 0;
+  margin-right: 10px;
   border-radius: 4px;
   text-align: center;
-  width: 36px;
-  height: 36px;
+  width: 50px;
+  height: 50px;
   transition: 0.3s;
+}
+
+#footer .footer-top .social-links a.email, #footer .footer-top .social-links a.phone {
+  font-size: 24px;
+  padding: 15px 0 25px 0;
+  line-height: 26px;
+}
+
+#footer .footer-top .social-links a.email i, #footer .footer-top .social-links a.phone i {
+  margin-bottom: 25px;
+  display: inline-block;
 }
 
 #footer .footer-top .social-links a:hover {
@@ -1519,4 +1564,31 @@ section {
     float: none;
     text-align: center;
   }
+}
+
+/***** OPREMA *****/
+
+#oprema .card {
+  /*box-shadow: 1px 1px 2px #d1d1d1;*/
+  border: none;
+}
+
+#oprema .card-img-top {
+  padding: 50px;
+}
+
+#oprema .card:hover {
+  cursor: pointer;
+}
+
+#oprema .card:hover * {
+  font-weight: 700 !important;
+}
+
+#oprema .card:hover .card-img-top {
+  transform: scale(1.1);
+}
+
+#oprema .card-body {
+  padding: none;
 }

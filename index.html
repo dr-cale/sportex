@@ -5,13 +5,16 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Butterfly Bootstrap Template - Index</title>
+  <title>Sportex Arilje - Početna</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="assets/img/favicon-32x32.png" rel="icon">
+  <link href="assets/img/favicon-32x32.png" rel="apple-touch-icon">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Dosis:300,400,500,,600,700,700i|Lato:300,300i,400,400i,700,700i" rel="stylesheet">
@@ -26,13 +29,12 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: Butterfly
-  * Updated: Sep 18 2023 with Bootstrap v5.3.2
-  * Template URL: https://bootstrapmade.com/butterfly-free-bootstrap-theme/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  <!-- JQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+  <!-- AOS - Animate On Scroll -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
 
 <body>
@@ -48,29 +50,22 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="#hero">Početna</a></li>
-          <li><a class="nav-link scrollto" href="#about">About</a></li>
-          <li><a class="nav-link scrollto" href="#services">Services</a></li>
-          <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li>
-          <li><a class="nav-link scrollto" href="#team">Team</a></li>
-          <li class="dropdown"><a href="#"><span>Dresovi</span> <i class="bi bi-chevron-down"></i></a>
+          <li><a class="nav-link scrollto" href="#about">O nama</a></li>
+          <li><a class="nav-link scrollto" href="#services">Usluge</a></li>
+          <li><a class="nav-link scrollto " href="#gallery">Mini galerija</a></li>
+          <li class="dropdown"><a href="oprema.html"><span>Oprema</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="#">Američki fudbal</a></li>
-              <!--<li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li>-->
-              <li><a href="#">Ragbi</a></li>
-              <li><a href="#">Fudbal</a></li>
-              <li><a href="#">Odbojka</a></li>
-              <li><a href="#">Tenis</a></li>
+              <li><a href="/oprema.html">Oprema - početna</a></li>
+              <li><a href="sports/football.html">Američki fudbal</a></li>
+              <li><a href="sports/basketball.html">Košarka</a></li>
+              <li><a href="sports/rugby.html">Ragbi</a></li>
+              <li><a href="sports/soccer.html">Fudbal</a></li>
+              <li><a href="sports/volleyball.html">Odbojka</a></li>
+              <li><a href="sports/handball.html">Rukomet</a></li>
+              <li><a href="sports/misc.html">Razno</a></li>
             </ul>
           </li>
-          <li><a class="nav-link scrollto" href="#contact">Kontakt</a></li>
+          <li><a class="nav-link scrollto" href="kontakt.html">Kontakt</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -83,12 +78,13 @@
 
     <div class="container">
       <div class="row">
-        <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
-          <h1>Creating websites that make you stop & stare</h1>
-          <h2>Accusantium quam, aliquam ultricies eget tempor id, aliquam eget nibh et. Maecen aliquam, risus at semper. Proin iaculis purus consequat sem cure digni ssim. Donec porttitora entum.</h2>
-          <div><a href="#about" class="btn-get-started scrollto">Get Started</a></div>
+        <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center" data-aos="zoom-out-right" data-aos-easing="linear" data-aos-delay="500">
+          <h1>Sportex Arilje - Najkvalitetnija oprema</h1>
+          <h2>Izrađujemo fudbalske, košarkaške, odbojkaške i ragbi dresove po vašem dizajnu i bojama vašeg kluba! 
+            I ne samo to, već i sve elemente sportske opreme, od čarapa do kapa.</h2>
+          <div><a href="#about" class="btn-get-started scrollto">Započnite</a></div>
         </div>
-        <div class="col-lg-6 order-1 order-lg-2 hero-img">
+        <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-out-left" data-aos-easing="linear" data-aos-delay="500">
           <img id="landing-png" src="assets/img/kits/soccer/29.png" class="img-fluid" alt="">
         </div>
       </div>
@@ -103,30 +99,30 @@
       <div class="container">
 
         <div class="row">
-          <div class="col-xl-5 col-lg-6 d-flex justify-content-center video-box align-items-stretch position-relative">
-            <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="glightbox play-btn mb-4"></a>
+          <div class="col-xl-5 col-lg-6 d-flex justify-content-center video-box align-items-stretch position-relative" data-aos="zoom-in-down" data-aos-easing="linear" data-aos-delay="100" data-aos-duration="500">
+            <!--<a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="glightbox play-btn mb-4"></a>-->
           </div>
 
-          <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
-            <h3>Enim quis est voluptatibus aliquid consequatur fugiat</h3>
-            <p>Esse voluptas cumque vel exercitationem. Reiciendis est hic accusamus. Non ipsam et sed minima temporibus laudantium. Soluta voluptate sed facere corporis dolores excepturi. Libero laboriosam sint et id nulla tenetur. Suscipit aut voluptate.</p>
+          <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5" data-aos="zoom-in-up" data-aos-easing="linear" data-aos-delay="100" data-aos-duration="500">
+            <h3>Zašto odabrati baš nas?</h3>
+            <p>STX je vodeća kompanija u izradi kvalitetnih dresova za ragbi i američki fudbal. Naši dresovi su napravljeni od najboljih materijala i prilagođeni su bojama vašeg kluba. Bilo da ste profesionalni sportista ili rekreativac, mi imamo dres koji će odgovarati vašim potrebama.</p>
 
             <div class="icon-box">
               <div class="icon"><i class="bx bx-fingerprint"></i></div>
-              <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-              <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
-            </div>
-
-            <div class="icon-box">
-              <div class="icon"><i class="bx bx-gift"></i></div>
-              <h4 class="title"><a href="">Nemo Enim</a></h4>
-              <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
+              <h4 class="title"><a href="">Dizajn</a></h4>
+              <p class="description">Naši dizajneri su stručnjaci u stvaranju jedinstvenih i atraktivnih dresova, tako da vaš tim izgleda sjajno na terenu.</p>
             </div>
 
             <div class="icon-box">
               <div class="icon"><i class="bx bx-atom"></i></div>
-              <h4 class="title"><a href="">Dine Pad</a></h4>
-              <p class="description">Explicabo est voluptatum asperiores consequatur magnam. Et veritatis odit. Sunt aut deserunt minus aut eligendi omnis</p>
+              <h4 class="title"><a href="">Kvalitet</a></h4>
+              <p class="description">Kvalitet, udobnost i funkcionalnost su glavne karakteristike naših dresova, što ih čini idealnim izborom za vaš tim.</p>
+            </div>
+
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-gift"></i></div>
+              <h4 class="title"><a href="">Personalizacija</a></h4>
+              <p class="description">Takođe, nudimo i personalizaciju dresova sa imenima i brojevima igrača, tako da vaš tim može da se istakne na terenu.</p>
             </div>
 
           </div>
@@ -140,30 +136,30 @@
       <div class="container">
 
         <div class="text-center title">
-          <h3>What we have achieved so far</h3>
-          <p>Iusto et labore modi qui sapiente xpedita tempora et aut non ipsum consequatur illo.</p>
+          <h3>Šta smo sve postigli do sada</h3>
+          <p>Marljivo radivši godinama unazad, stekli smo brojne zadovoljne klijente.</p>
         </div>
 
         <div class="row counters position-relative">
 
           <div class="col-lg-3 col-6 text-center">
-            <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
-            <p>Clients</p>
+            <span data-purecounter-start="0" data-purecounter-end="235" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Klijenata</p>
           </div>
 
           <div class="col-lg-3 col-6 text-center">
-            <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
-            <p>Projects</p>
+            <span data-purecounter-start="0" data-purecounter-end="648" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Projekata</p>
           </div>
 
           <div class="col-lg-3 col-6 text-center">
-            <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1" class="purecounter"></span>
-            <p>Hours Of Support</p>
+            <span data-purecounter-start="0" data-purecounter-end="1763" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Izbačena dizajna</p>
           </div>
 
           <div class="col-lg-3 col-6 text-center">
-            <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1" class="purecounter"></span>
-            <p>Hard Workers</p>
+            <span data-purecounter-start="0" data-purecounter-end="10" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Vrednih radnika</p>
           </div>
 
         </div>
@@ -172,7 +168,7 @@
     </section><!-- End Counts Section -->
 
     <!-- ======= Clients Section ======= -->
-    <section id="clients" class="clients">
+    <!--<section id="clients" class="clients">
       <div class="container">
 
         <div class="row no-gutters clients-wrap clearfix wow fadeInUp">
@@ -228,60 +224,61 @@
         </div>
 
       </div>
-    </section><!-- End Clients Section -->
+    </section>--><!-- End Clients Section -->
 
     <!-- ======= Services Section ======= -->
     <section id="services" class="services section-bg">
+      <img class="services-bg" src="assets/img/white-pattern.avif" alt="">
       <div class="container">
 
-        <div class="section-title">
-          <h2>Services</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+        <div class="section-title" data-aos="zoom-in-up" data-aos-easing="linear" data-aos-delay="100" data-aos-duration="300">
+          <h2>Usluge</h2>
+          <p>Izaberite sport kojim želite da se bavite, a mi ćemo Vam obezbediti opremu za to. Od istraživanja i razvoja do proizvodnje i logistike.</p>
         </div>
 
         <div class="row">
-          <div class="col-lg-4 col-md-6">
+          <div class="col-lg-4 col-md-6" data-aos="zoom-in-up" data-aos-easing="linear" data-aos-delay="200" data-aos-duration="500">
             <div class="icon-box">
-              <div class="icon"><i class="bi bi-cash-stack" style="color: #ff689b;"></i></div>
-              <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-              <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+              <div class="icon"><i class="fa-solid fa-shirt" style="color: #ff689b;"></i></div>
+              <h4 class="title"><a href="">Izrada sportskih dresova</a></h4>
+              <p class="description">STX nudi širok izbor dresova za ragbi, američki fudbal i druge sportove. Dresovi su izrađeni od vrhunskih materijala, prilagođeni bojama kluba i personalizovani imenima i brojevima igrača. Kvalitet i funkcionalnost omogućavaju udobnost i profesionalni izgled na terenu.</p>
             </div>
           </div>
-          <div class="col-lg-4 col-md-6">
+          <div class="col-lg-4 col-md-6" data-aos="zoom-in-up" data-aos-easing="linear" data-aos-delay="300" data-aos-duration="500">
             <div class="icon-box">
-              <div class="icon"><i class="bi bi-calendar4-week" style="color: #e9bf06;"></i></div>
-              <h4 class="title"><a href="">Dolor Sitema</a></h4>
-              <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6" data-wow-delay="0.1s">
-            <div class="icon-box">
-              <div class="icon"><i class="bi bi-chat-text" style="color: #3fcdc7;"></i></div>
-              <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
-              <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6" data-wow-delay="0.1s">
-            <div class="icon-box">
-              <div class="icon"><i class="bi bi-credit-card-2-front" style="color:#41cf2e;"></i></div>
-              <h4 class="title"><a href="">Magni Dolores</a></h4>
-              <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+              <div class="icon"><i class="fa-solid fa-industry" style="color: #e9bf06;"></i></div>
+              <h4 class="title"><a href="">Proizvodnja sportske opreme</a></h4>
+              <p class="description">Pored dresova, STX izrađuje visokokvalitetne šorceve, čarape, helanke i prsluke koji pružaju maksimalnu udobnost i performanse za treninge i utakmice. Oprema je dizajnirana da zadovolji potrebe profesionalnih i rekreativnih sportista.</p>
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6" data-wow-delay="0.2s">
+          <div class="col-lg-4 col-md-6" data-wow-delay="0.1s" data-aos="zoom-in-up" data-aos-easing="linear" data-aos-delay="400" data-aos-duration="500">
             <div class="icon-box">
-              <div class="icon"><i class="bi bi-globe" style="color: #d6ff22;"></i></div>
-              <h4 class="title"><a href="">Nemo Enim</a></h4>
-              <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
+              <div class="icon"><i class="fa-solid fa-ranking-star" style="color: #3fcdc7;"></i></div>
+              <h4 class="title"><a href="">Personalizovana sportska odeća</a></h4>
+              <p class="description">STX nudi personalizaciju majica, dukseva, trenerki i jakni kako bi svaki tim ili pojedinac mogao da se istakne. Na odeći se mogu dodati logo kluba, ime igrača ili specifični dizajni po želji klijenata.</p>
             </div>
           </div>
-          <div class="col-lg-4 col-md-6" data-wow-delay="0.2s">
+          <div class="col-lg-4 col-md-6" data-wow-delay="0.1s" data-aos="zoom-in-up" data-aos-easing="linear" data-aos-delay="500" data-aos-duration="500">
             <div class="icon-box">
-              <div class="icon"><i class="bi bi-clock" style="color: #4680ff;"></i></div>
-              <h4 class="title"><a href="">Eiusmod Tempor</a></h4>
-              <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi</p>
+              <div class="icon"><i class="fa-solid fa-suitcase-rolling" style="color:#41cf2e;"></i></div>
+              <h4 class="title"><a href="">Dizajn i izrada torbi i rančeva</a></h4>
+              <p class="description">Kompanija izrađuje kvalitetne torbe i rančeve idealne za sportiste. Dizajniran da bude funkcionalan i atraktivan, svaki proizvod se može prilagoditi klupskim bojama i logotipima.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-wow-delay="0.2s" data-aos="zoom-in-up" data-aos-easing="linear" data-aos-delay="600" data-aos-duration="500">
+            <div class="icon-box">
+              <div class="icon"><i class="fa-solid fa-mitten" style="color: #d6ff22;"></i></div>
+              <h4 class="title"><a href="">Sezonska sportska odeća</a></h4>
+              <p class="description">Za hladnije vreme STX nudi šuškavce, jakne i zimske setove izrađene od materijala koji pružaju zaštitu od vetra i kiše. Ove linije kombinuju funkcionalnost sa modernim dizajnom.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6" data-wow-delay="0.2s" data-aos="zoom-in-up" data-aos-easing="linear" data-aos-delay="700" data-aos-duration="500">
+            <div class="icon-box">
+              <div class="icon"><i class="fa-solid fa-medal" style="color: #4680ff;"></i></div>
+              <h4 class="title"><a href="">Profesionalni dizajnerski tim</a></h4>
+              <p class="description">STX dizajnerski tim sarađuje sa klijentima kako bi kreirao jedinstvene, atraktivne i funkcionalne dizajne za sve vrste sportske opreme i odeće. Svaki komad je prilagođen specifičnim potrebama i identitetu kluba ili pojedinca.</p>
             </div>
           </div>
         </div>
@@ -290,7 +287,7 @@
     </section><!-- End Services Section -->
 
     <!-- ======= Portfolio Section ======= -->
-    <section id="portfolio" class="portfolio">
+    <!--<section id="portfolio" class="portfolio">
       <div class="container">
 
         <div class="section-title">
@@ -440,7 +437,7 @@
         </div>
 
       </div>
-    </section><!-- End Portfolio Section -->
+    </section>--><!-- End Portfolio Section -->
 
     <!-- ======= Testimonials Section ======= -->
     <section id="testimonials" class="testimonials">
@@ -451,66 +448,61 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-                <h3>Saul Goodman</h3>
-                <h4>Ceo &amp; Founder</h4>
-                <p>
+                <img src="assets/img/png/fudbal-dresovi/17.png" class="testimonial-img" alt="">
+                <h3>Fudbalski dresovi</h3>
+                <!--<p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
                   Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
+                </p>-->
               </div>
             </div><!-- End testimonial item -->
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-                <h3>Sara Wilsson</h3>
-                <h4>Designer</h4>
-                <p>
+                <img src="assets/img/png/fudbal-dresovi/15.png" class="testimonial-img" alt="">
+                <h3>Dresovi za američki fudbal</h3>
+                <!--<p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
                   Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
+                </p>-->
               </div>
             </div><!-- End testimonial item -->
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-                <h3>Jena Karlis</h3>
-                <h4>Store Owner</h4>
-                <p>
+                <img src="assets/img/png/duksevi/9.png" class="testimonial-img" alt="">
+                <h3>Dresovi za Ragbi</h3>
+                <!--<p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
                   Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
+                </p>-->
               </div>
             </div><!-- End testimonial item -->
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-                <h3>Matt Brandon</h3>
-                <h4>Freelancer</h4>
-                <p>
+                <img src="assets/img/png/košarka/muški/12.png" class="testimonial-img" alt="">
+                <h3>Košarkaški dresovi</h3>
+                <!--<p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
                   Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
+                </p>-->
               </div>
             </div><!-- End testimonial item -->
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
-                <h3>John Larson</h3>
-                <h4>Entrepreneur</h4>
-                <p>
+                <img src="assets/img/png/koplet majica i šorc/2.png" class="testimonial-img" alt="">
+                <h3>Odbojkaški dresovi</h3>
+                <!--<p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
                   Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
+                </p>-->
               </div>
             </div><!-- End testimonial item -->
 
@@ -522,7 +514,7 @@
     </section><!-- End Testimonials Section -->
 
     <!-- ======= Team Section ======= -->
-    <section id="team" class="team section-bg">
+    <!--<section id="team" class="team section-bg">
       <div class="container">
 
         <div class="section-title">
@@ -607,90 +599,91 @@
         </div>
 
       </div>
-    </section><!-- End Team Section -->
+    </section>--><!-- End Team Section -->
 
     <!-- ======= Gallery Section ======= -->
     <section id="gallery" class="gallery">
       <div class="container">
 
         <div class="section-title">
-          <h2>Gallery</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <h2>Mini galerija</h2>
+          <p>Ovde je predstavljen tek deo opreme koju nudimo.</p>
         </div>
 
         <div class="row no-gutters">
 
           <div class="col-lg-3 col-md-4">
             <div class="gallery-item">
-              <a href="assets/img/gallery/gallery-1.jpg" class="galleery-lightbox" data-gallery="gallery-item">
-                <img src="assets/img/gallery/gallery-1.jpg" alt="" class="img-fluid">
+              <a href="assets/img/png/duksevi/5.png" class="galleery-lightbox" data-gallery="gallery-item">
+                <img src="assets/img/png/duksevi/5.png" alt="" class="img-fluid">
               </a>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-4">
             <div class="gallery-item">
-              <a href="assets/img/gallery/gallery-2.jpg" class="galleery-lightbox" data-gallery="gallery-item">
-                <img src="assets/img/gallery/gallery-2.jpg" alt="" class="img-fluid">
+              <a href="assets/img/png/dry fit majice/1.png" class="galleery-lightbox" data-gallery="gallery-item">
+                <img src="assets/img/png/dry fit majice/1.png" alt="" class="img-fluid">
               </a>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-4">
             <div class="gallery-item">
-              <a href="assets/img/gallery/gallery-3.jpg" class="galleery-lightbox" data-gallery="gallery-item">
-                <img src="assets/img/gallery/gallery-3.jpg" alt="" class="img-fluid">
+              <a href="assets/img/png/dry fit majice/2.png" class="galleery-lightbox" data-gallery="gallery-item">
+                <img src="assets/img/png/dry fit majice/2.png" alt="" class="img-fluid">
               </a>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-4">
             <div class="gallery-item">
-              <a href="assets/img/gallery/gallery-4.jpg" class="galleery-lightbox" data-gallery="gallery-item">
-                <img src="assets/img/gallery/gallery-4.jpg" alt="" class="img-fluid">
+              <a href="assets/img/png/duksevi/12.png" class="galleery-lightbox" data-gallery="gallery-item">
+                <img src="assets/img/png/duksevi/12.png" alt="" class="img-fluid">
               </a>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-4">
             <div class="gallery-item">
-              <a href="assets/img/gallery/gallery-5.jpg" class="galleery-lightbox" data-gallery="gallery-item">
-                <img src="assets/img/gallery/gallery-5.jpg" alt="" class="img-fluid">
+              <a href="assets/img/png/dry fit majice/3.png" class="galleery-lightbox" data-gallery="gallery-item">
+                <img src="assets/img/png/dry fit majice/3.png" alt="" class="img-fluid">
               </a>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-4">
             <div class="gallery-item">
-              <a href="assets/img/gallery/gallery-6.jpg" class="galleery-lightbox" data-gallery="gallery-item">
-                <img src="assets/img/gallery/gallery-6.jpg" alt="" class="img-fluid">
+              <a href="assets/img/png/dry fit majice/4.png" class="galleery-lightbox" data-gallery="gallery-item">
+                <img src="assets/img/png/dry fit majice/4.png" alt="" class="img-fluid">
               </a>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-4">
             <div class="gallery-item">
-              <a href="assets/img/gallery/gallery-7.jpg" class="galleery-lightbox" data-gallery="gallery-item">
-                <img src="assets/img/gallery/gallery-7.jpg" alt="" class="img-fluid">
+              <a href="assets/img/png/duksevi/1.png" class="galleery-lightbox" data-gallery="gallery-item">
+                <img src="assets/img/png/duksevi/1.png" alt="" class="img-fluid">
               </a>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-4">
             <div class="gallery-item">
-              <a href="assets/img/gallery/gallery-8.jpg" class="galleery-lightbox" data-gallery="gallery-item">
-                <img src="assets/img/gallery/gallery-8.jpg" alt="" class="img-fluid">
+              <a href="assets/img/png/duksevi/8.png" class="galleery-lightbox" data-gallery="gallery-item">
+                <img src="assets/img/png/duksevi/8.png" alt="" class="img-fluid">
               </a>
             </div>
           </div>
 
         </div>
 
+        <center><a href="oprema.html" class="btn-get-started scrollto">Pogledajte više</a></center>
       </div>
     </section><!-- End Gallery Section -->
 
     <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact">
+    <!--<section id="contact" class="contact">
       <div class="container">
 
         <div class="section-title">
@@ -758,73 +751,25 @@
         </div>
 
       </div>
-    </section><!-- End Contact Section -->
+    </section>--><!-- End Contact Section -->
 
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
   <footer id="footer">
 
-    <div class="footer-newsletter">
+    <div class="footer-top justify-content-center">
       <div class="container">
         <div class="row justify-content-center">
-          <div class="col-lg-6">
-            <h4>Join Our Newsletter</h4>
-            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="Subscribe">
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <div class="footer-top">
-      <div class="container">
-        <div class="row">
-
-          <div class="col-lg-3 col-md-6 footer-contact">
-            <h3>Butterfly</h3>
-            <p>
-              A108 Adam Street <br>
-              New York, NY 535022<br>
-              United States <br><br>
-              <strong>Phone:</strong> +1 5589 55488 55<br>
-              <strong>Email:</strong> info@example.com<br>
-            </p>
-          </div>
-
-          <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Useful Links</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
-            </ul>
-          </div>
-
-          <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Our Services</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
-            </ul>
-          </div>
-
-          <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Our Social Networks</h4>
-            <p>Cras fermentum odio eu feugiat lide par naso tierra videa magna derita valies</p>
-            <div class="social-links mt-3">
-              <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-              <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-              <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-              <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-              <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+          <div class="col-12 col-md-6 footer-links justify-content-center text-center">
+            <h3>KAKO DO NAS</h3>
+            <p>Obratite nam se putem mejla, telefona, Instagrama ili Facebook-a.</p>
+            <div class="social-links mt-4">
+              <a href="mailto:sportexdragan@gmail.com" class="email"><i class="fa-regular fa-envelope"></i></a>
+              <a href="tel:+381063691711" class="phone"><i class="fa-solid fa-phone"></i></a>
+              <a href="https://www.instagram.com/stx_sportskaoprema/" class="instagram"><i class="bx bxl-instagram"></i></a>
+              <a href="https://www.facebook.com/sportex.rs" class="facebook"><i class="bx bxl-facebook"></i></a>
             </div>
           </div>
 
@@ -832,16 +777,16 @@
       </div>
     </div>
 
-    <div class="container py-4">
-      <div class="copyright">
-        &copy; Copyright <strong><span>Butterfly</span></strong>. All Rights Reserved
+    <div class="container-fluid row align-items-center py-4">
+      <div class="copyright col-md-6 text-center">
+        &copy; Copyright <strong><span>Sportex Arilje</span></strong>. All Rights Reserved
       </div>
-      <div class="credits">
+      <div class="credits col-md-6 text-center">
         <!-- All the links in the footer should remain intact. -->
         <!-- You can delete the links only if you purchased the pro version. -->
         <!-- Licensing information: https://bootstrapmade.com/license/ -->
         <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/butterfly-free-bootstrap-theme/ -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        Designed by <strong>Sportex Arilje</strong>
       </div>
     </div>
   </footer><!-- End Footer -->
@@ -858,7 +803,10 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-
+  <script src="assets/js/index.js"></script>
+  <script>
+    AOS.init();
+  </script>
 </body>
 
 </html>
