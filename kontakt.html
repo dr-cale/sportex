@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="rs">
 
 <head>
   <meta charset="utf-8">
@@ -103,11 +103,29 @@
               <li><a href="sports/rugby.html">Ragbi</a></li>
               <li><a href="sports/soccer.html">Fudbal</a></li>
               <li><a href="sports/volleyball.html">Odbojka</a></li>
-              <li><a href="sports/handball.html">Rukomet</a></li>
+              <li><a href="sports/martial-arts.html">Borilački sportovi</a></li>
               <li><a href="sports/misc.html">Razno</a></li>
             </ul>
           </li>
           <li><a class="nav-link scrollto active" href="kontakt.html">Kontakt</a></li>
+          <li id="language-selector" class="dropdown">
+            <a class="nav-link dropdown-toggle d-flex align-items-center" href="javascript:void(0)" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="assets/img/flags/rs.svg" alt="Srpski" class="flag-icon">
+              <span class="lang-name">Srpski</span>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+              <li>
+                <a class="dropdown-item d-flex align-items-center" href="javascript:void(0)">
+                  <img src="assets/img/flags/rs.svg" alt="Srpski" class="flag-icon">Srpski
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item d-flex align-items-center" href="contact.html">
+                  <img src="assets/img/flags/uk.svg" alt="Engleski" class="flag-icon">Engleski
+                </a>
+              </li>
+            </ul>
+          </li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -164,7 +182,7 @@
 
           <div class="col-lg-8 mt-5 mt-lg-0">
 
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <form action="#" method="post" role="form" class="php-email-form contact-form" onsubmit="submitForm(); return false;">
               <div class="row">
                 <div class="col-md-6 form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="Vaše ime" required>
@@ -177,14 +195,15 @@
                 <input type="text" class="form-control" name="subject" id="subject" placeholder="Naslov poruke" required>
               </div>
               <div class="form-group mt-3">
-                <textarea class="form-control" name="message" rows="5" placeholder="Sadržaj poruke" required></textarea>
+                <textarea class="form-control" name="message" rows="5" id="textarea" placeholder="Sadržaj poruke" required></textarea>
               </div>
               <div class="my-3">
-                <div class="loading">Učitavanje</div>
-                <div class="error-message"></div>
                 <div class="sent-message">Vaša poruka je poslata. Hvala Vam!</div>
               </div>
-              <div class="text-center"><button type="submit">Pošalji poruku</button></div>
+              <div class="text-center">
+                <button type="submit" id="submit">Pošalji poruku</button>
+                <p class="pt-4" id="statusmessage"></p>
+              </div>
             </form>
 
           </div>
@@ -207,8 +226,8 @@
             <h3>KAKO DO NAS</h3>
             <p>Obratite nam se putem mejla, telefona, Instagrama ili Facebook-a.</p>
             <div class="social-links mt-4">
-              <a href="mailto:sportexdragan@gmail.com" class="email"><i class="fa-regular fa-envelope"></i></a>
-              <a href="tel:+381063691711" class="phone"><i class="fa-solid fa-phone"></i></a>
+              <a href="mailto:sportexdragan@gmail.com" class="email"><i class="bx bx-envelope"></i></a>
+              <a href="tel:+381063691711" class="phone"><i class="bx bx-phone"></i></a>
               <a href="https://www.instagram.com/stx_sportskaoprema/" class="instagram"><i class="bx bxl-instagram"></i></a>
               <a href="https://www.facebook.com/sportex.rs" class="facebook"><i class="bx bxl-facebook"></i></a>
             </div>
@@ -247,6 +266,32 @@
   <script src="assets/js/index.js"></script>
   <script>
     AOS.init();
+
+    // SEND EMAIL
+
+    function _(id) { return document.getElementById(id); }
+    function submitForm() {
+        _("submit").disabled = true;
+        _("statusmessage").innerHtml = 'Slanje je u toku...';
+        var formData = new FormData();
+        formData.append("name", _("name").value);
+        formData.append("email", _("email").value);
+        formData.append("subject", _("subject").value);
+        formData.append("textarea", _("textarea").value);
+        var ajax = new XMLHttpRequest();
+        ajax.open("POST", "assets/php/email.php");
+        ajax.onreadystatechange = function() {
+            if(ajax.readyState == 4 && ajax.status == 200) {
+                if(ajax.responseText == "success") {
+                    _("statusmessage").innerHTML = '<h2>Hvala, ' + _("name").value + '! Vaš mejl je dostavljen.</h2>'
+                } else {
+                    _("statusmessage").innerHTML = ajax.responseText;
+                    _("submit").disabled = false;
+                }
+            }
+        }
+        ajax.send( formData );
+    }
   </script>
 
 </body>

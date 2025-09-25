@@ -2,8 +2,8 @@ $(document).ready(function() {
     var images = [
         "fudbal-dresovi/29.png",
         "golmanski/2.png",
-        "košarka/ženski/2.png",
-        "košarka-trenerke/2.png"
+        "kosarka/zenski/2.png",
+        "ragbi/dresovi/2.png"
     ];
     var currentIndex = 0;
 

@@ -322,6 +322,51 @@ h6 {
   display: block;
 }
 
+/* Scoped only to the language selector */
+/* Make the parent the positioning context */
+#language-selector {
+  position: relative;
+}
+
+#languageDropdown {
+  justify-content: flex-start;
+}
+
+/* Center the dropdown under the toggle */
+#language-selector .dropdown-menu {
+  transform: translateX(-50%);
+  right: auto; /* override Bootstrap's right alignment */
+  min-width: max-content; /* fit content width */
+}
+
+/* Text next to icon */
+#language-selector .dropdown-item {
+  justify-content: flex-start;
+}
+
+#language-selector .dropdown-item:active {
+    background-color: #f1f1f1;
+}
+
+/* Flag styling */
+#language-selector .flag-icon {
+  width: 20px;
+  height: 14px;
+  object-fit: cover;
+  border-radius: 2px;
+  margin-right: 6px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 991.98px) {
+  #language-selector .dropdown-menu {
+    position: static;
+    transform: none;
+    left: auto;
+  }
+}
+
+
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
@@ -395,13 +440,13 @@ h6 {
 
 @media (max-width: 768px) {
   #hero h1 {
-    font-size: 28px;
-    line-height: 36px;
+    font-size: 24px;
+    line-height: 30px;
   }
 
   #hero h2 {
-    font-size: 18px;
-    line-height: 24px;
+    font-size: 16px;
+    line-height: 22px;
   }
 
   #hero .hero-img img {
@@ -418,6 +463,7 @@ section {
 }
 
 .section-title {
+  margin-top: 50px;
   text-align: center;
   padding-bottom: 30px;
 }
@@ -1529,15 +1575,9 @@ section {
   transition: 0.3s;
 }
 
-#footer .footer-top .social-links a.email, #footer .footer-top .social-links a.phone {
-  font-size: 24px;
-  padding: 15px 0 25px 0;
-  line-height: 26px;
-}
-
-#footer .footer-top .social-links a.email i, #footer .footer-top .social-links a.phone i {
-  margin-bottom: 25px;
-  display: inline-block;
+#footer i.bx.bx-envelope, #footer i.bx.bx-envelope::before {
+  width: 30px !important;
+  height: 30px !important;
 }
 
 #footer .footer-top .social-links a:hover {
@@ -1564,6 +1604,10 @@ section {
     float: none;
     text-align: center;
   }
+
+  #oprema .card-img-top {
+    padding: 20px 10px;
+  }
 }
 
 /***** OPREMA *****/
@@ -1575,6 +1619,15 @@ section {
 
 #oprema .card-img-top {
   padding: 50px;
+}
+
+@media (max-width: 575px) {
+  #oprema .card-img-top {
+    padding: 50px 30px !important;
+  }
+  #oprema #volleyball-ball {
+    padding: 50px 40px !important;
+  }
 }
 
 #oprema .card:hover {
