@@ -1,591 +1,1186 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-  <title>Sportex Arilje - Sportswear</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
-
-  <!-- Favicons -->
-  <link href="../assets/img/favicon-32x32.png" rel="icon">
-  <link href="../assets/img/favicon-32x32.png" rel="apple-touch-icon">
-
-  <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Dosis:300,400,500,,600,700,700i|Lato:300,300i,400,400i,700,700i" rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-  <!-- Template Main CSS File -->
-  <link href="../assets/css/style-sports.css" rel="stylesheet">
-  <link href="../assets/css/style.css" rel="stylesheet">
-
-  <!-- JQuery -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-
-  <!-- AOS - Animate On Scroll -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
-  <!-- FancyBox Gallery -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" rel="stylesheet">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
-
-  <style>
-    header {
-      position: sticky !important;
-    }
-    main {
-      width: 100%;
-      /*height: 80vh;*/
-      min-height: 100vh;
-      /*background: url(../img/bkg/white-1.jpg), #f9f9f9;*/
-    }
-
-    main::before {
-      content: "";
-      position: absolute;
-      top: 0; 
-      left: 0;
-      width: 100%; 
-      height: 100%;  
-      opacity: .4; 
-      z-index: -1;
-      background: url(../img/bkg/white-1.jpg) !important;
-    }
-
-    .section-title p {
-      width: 70%;
-      margin-left: 15%;
-    }
-
-    .contact .php-email-form textarea {
-      min-height: 200px !important;
-    }
-
-    main a:visited, main a:link {
-      color: inherit !important;
-      text-decoration: none !important;
-    }
-
-    main p {
-      color: black !important;
-    }
-  </style>
-</head>
-
-<body>
-
-  <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top">
-    <div class="container d-flex align-items-center justify-content-between">
-
-      <a href="../index-en.html" class="logo"><img src="../assets/img/logos/logo-3.png" alt="" class="img-fluid"></a>
-      <!-- Uncomment below if you prefer to use text as a logo -->
-      <!-- <h1 class="logo"><a href="index.html">Butterfly</a></h1> -->
-
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a class="nav-link scrollto" href="../index-en.html#hero">Homepage</a></li>
-          <li><a class="nav-link scrollto" href="../index-en.html#about">About us</a></li>
-          <li><a class="nav-link scrollto" href="../index-en.html#services">Services</a></li>
-          <li><a class="nav-link scrollto" href="../index-en.html#gallery">Mini gallery</a></li>
-          <li class="dropdown"><a href="../equipment.html" class="nav-link active"><span>Equipment</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="../equipment.html">Equipment - homepage</a></li>
-              <li><a href="football-en.html">American football</a></li>
-              <li><a href="basketball-en.html">Basketball</a></li>
-              <li><a href="rugby-en.html">Rugby</a></li>
-              <li><a href="soccer-en.html">Football</a></li>
-              <li><a href="volleyball-en.html">Volleyball</a></li>
-              <li><a href="martial-arts-en.html">Martial arts</a></li>
-              <li class="active"><a href="misc-en.html">Miscellaneous</a></li>
-            </ul>
-          </li>
-          <li><a class="nav-link scrollto" href="../kontakt.html">Contact</a></li>
-          <li id="language-selector" class="dropdown">
-            <a class="nav-link dropdown-toggle d-flex align-items-center" href="javascript:void(0)" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <img src="../assets/img/flags/uk.svg" alt="English" class="flag-icon">
-              <span class="lang-name">English</span>
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="languageDropdown">
-              <li>
-                <a class="dropdown-item d-flex align-items-center" href="misc.html">
-                  <img src="../assets/img/flags/rs.svg" alt="Serbian" class="flag-icon">Serbian
-                </a>
-              </li>
-              <li>
-                <a class="dropdown-item d-flex align-items-center" href="javascript:void(0)">
-                  <img src="../assets/img/flags/uk.svg" alt="English" class="flag-icon">English
-                </a>
-              </li>
-            </ul>
-          </li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
-
-    </div>
-  </header><!-- End Header -->
-
-  <main id="main">
-
-    <!-- ======= Contact Section ======= -->
-    <section id="oprema" class="oprema" data-aos="zoom-in" data-aos-easing="ease-in-back" data-aos-delay="100" data-aos-duration="1000">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Sweatshirts</h2>
-        </div>
-
-        <main class="main">
-          <div class="container">
-            <div class="card">
-              <div class="card-image">
-                <a href="../assets/img/png/razno/duksevi/1.png" data-fancybox="gallery2" data-caption="Sweatshirt 1">
-                  <img src="../assets/img/png/razno/duksevi/1.png" alt="Image Gallery">
-                </a>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-image">
-                <a href="../assets/img/png/razno/duksevi/2.png" data-fancybox="gallery2" data-caption="Sweatshirt 2">
-                  <img src="../assets/img/png/razno/duksevi/2.png" alt="Image Gallery">
-                </a>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-image">
-                <a href="../assets/img/png/razno/duksevi/3.png" data-fancybox="gallery2" data-caption="Sweatshirt 3">
-                  <img src="../assets/img/png/razno/duksevi/3.png" alt="Image Gallery">
-                </a>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-image">
-                <a href="../assets/img/png/razno/duksevi/4.png" data-fancybox="gallery2" data-caption="Sweatshirt 4">
-                  <img src="../assets/img/png/razno/duksevi/4.png" alt="Image Gallery">
-                </a>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-image">
-                <a href="../assets/img/png/razno/duksevi/5.png" data-fancybox="gallery2" data-caption="Sweatshirt 5">
-                  <img src="../assets/img/png/razno/duksevi/5.png" alt="Image Gallery">
-                </a>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-image">
-                <a href="../assets/img/png/razno/duksevi/6.png" data-fancybox="gallery2" data-caption="Sweatshirt 6">
-                  <img src="../assets/img/png/razno/duksevi/6.png" alt="Image Gallery">
-                </a>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-image">
-                <a href="../assets/img/png/razno/duksevi/7.png" data-fancybox="gallery2" data-caption="Sweatshirt 7">
-                  <img src="../assets/img/png/razno/duksevi/7.png" alt="Image Gallery">
-                </a>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-image">
-                <a href="../assets/img/png/razno/duksevi/8.png" data-fancybox="gallery2" data-caption="Sweatshirt 8">
-                  <img src="../assets/img/png/razno/duksevi/8.png" alt="Image Gallery">
-                </a>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-image">
-                <a href="../assets/img/png/razno/duksevi/9.png" data-fancybox="gallery2" data-caption="Sweatshirt 9">
-                  <img src="../assets/img/png/razno/duksevi/9.png" alt="Image Gallery">
-                </a>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-image">
-                <a href="../assets/img/png/razno/duksevi/10.png" data-fancybox="gallery2" data-caption="Sweatshirt 10">
-                  <img src="../assets/img/png/razno/duksevi/10.png" alt="Image Gallery">
-                </a>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-image">
-                <a href="../assets/img/png/razno/duksevi/11.png" data-fancybox="gallery2" data-caption="Sweatshirt 11">
-                  <img src="../assets/img/png/razno/duksevi/11.png" alt="Image Gallery">
-                </a>
-              </div>
-            </div>
-          </div>
-        </main>
-
-        <div class="section-title">
-          <h2>T-shirts</h2>
-        </div>
-
-        <main class="main">
-          <div class="container">
-            <div class="card">
-              <div class="card-image">
-                <a href="../assets/img/png/razno/majice/1.png" data-fancybox="gallery" data-caption="Dry-fit t-shirt 1">
-                  <img src="../assets/img/png/razno/majice/1.png" alt="Image Gallery">
-                </a>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-image">
-                <a href="../assets/img/png/razno/majice/2.png" data-fancybox="gallery" data-caption="Dry-fit t-shirt 2">
-                  <img src="../assets/img/png/razno/majice/2.png" alt="Image Gallery">
-                </a>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-image">
-                <a href="../assets/img/png/razno/majice/3.png" data-fancybox="gallery" data-caption="Dry-fit t-shirt 3">
-                  <img src="../assets/img/png/razno/majice/3.png" alt="Image Gallery">
-                </a>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-image">
-                <a href="../assets/img/png/razno/majice/4.png" data-fancybox="gallery" data-caption="Dry-fit t-shirt 4">
-                  <img src="../assets/img/png/razno/majice/4.png" alt="Image Gallery">
-                </a>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-image">
-                <a href="../assets/img/png/razno/majice/5.png" data-fancybox="gallery" data-caption="Top shirt">
-                  <img src="../assets/img/png/razno/majice/5.png" alt="Image Gallery">
-                </a>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-image">
-                <a href="../assets/img/png/razno/majice/6.png" data-fancybox="gallery" data-caption="Polo t-shirt 1">
-                  <img src="../assets/img/png/razno/majice/6.png" alt="Image Gallery">
-                </a>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-image">
-                <a href="../assets/img/png/razno/majice/7.png" data-fancybox="gallery" data-caption="Polo t-shirt 2">
-                  <img src="../assets/img/png/razno/majice/7.png" alt="Image Gallery">
-                </a>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-image">
-                <a href="../assets/img/png/razno/majice/8.png" data-fancybox="gallery" data-caption="Polo t-shirt 3">
-                  <img src="../assets/img/png/razno/majice/8.png" alt="Image Gallery">
-                </a>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-image">
-                <a href="../assets/img/png/razno/majice/9.png" data-fancybox="gallery" data-caption="Polo t-shirt 4">
-                  <img src="../assets/img/png/razno/majice/9.png" alt="Image Gallery">
-                </a>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-image">
-                <a href="../assets/img/png/razno/majice/10.png" data-fancybox="gallery" data-caption="T-shirt 1">
-                  <img src="../assets/img/png/razno/majice/10.png" alt="Image Gallery">
-                </a>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-image">
-                <a href="../assets/img/png/razno/majice/11.png" data-fancybox="gallery" data-caption="T-shirt 2">
-                  <img src="../assets/img/png/razno/majice/11.png" alt="Image Gallery">
-                </a>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-image">
-                <a href="../assets/img/png/razno/majice/12.png" data-fancybox="gallery" data-caption="T-shirt 3">
-                  <img src="../assets/img/png/razno/majice/12.png" alt="Image Gallery">
-                </a>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-image">
-                <a href="../assets/img/png/razno/majice/13.png" data-fancybox="gallery" data-caption="T-shirt 4">
-                  <img src="../assets/img/png/razno/majice/13.png" alt="Image Gallery">
-                </a>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-image">
-                <a href="../assets/img/png/razno/majice/14.png" data-fancybox="gallery" data-caption="T-shirt 5">
-                  <img src="../assets/img/png/razno/majice/14.png" alt="Image Gallery">
-                </a>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-image">
-                <a href="../assets/img/png/razno/majice/15.png" data-fancybox="gallery" data-caption="T-shirt 6">
-                  <img src="../assets/img/png/razno/majice/15.png" alt="Image Gallery">
-                </a>
-              </div>
-            </div>
-          </div>
-        </main>
-
-        <div class="section-title">
-          <h2>Miscellaneous</h2>
-        </div>
-
-        <main class="main">
-          <div class="container">
-            <div class="card">
-              <div class="card-image">
-                <a href="../assets/img/png/razno/ostalo/1.png" data-fancybox="gallery3" data-caption="Jacket 1">
-                  <img src="../assets/img/png/razno/ostalo/1.png" alt="Image gallery3">
-                </a>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-image">
-                <a href="../assets/img/png/razno/ostalo/2.png" data-fancybox="gallery3" data-caption="Jacket 2">
-                  <img src="../assets/img/png/razno/ostalo/2.png" alt="Image gallery3">
-                </a>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-image">
-                <a href="../assets/img/png/razno/ostalo/3.png" data-fancybox="gallery3" data-caption="Vest">
-                  <img src="../assets/img/png/razno/ostalo/3.png" alt="Image gallery3">
-                </a>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-image">
-                <a href="../assets/img/png/razno/ostalo/kacket.png" data-fancybox="gallery3" data-caption="Cap">
-                  <img src="../assets/img/png/razno/ostalo/kacket.png" alt="Image gallery3">
-                </a>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-image">
-                <a href="../assets/img/png/razno/ostalo/kapa-1.png" data-fancybox="gallery3" data-caption="Winter cap 1">
-                  <img src="../assets/img/png/razno/ostalo/kapa-1.png" alt="Image gallery3">
-                </a>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-image">
-                <a href="../assets/img/png/razno/ostalo/kapa-2.png" data-fancybox="gallery3" data-caption="Winter cap 2">
-                  <img src="../assets/img/png/razno/ostalo/kapa-2.png" alt="Image gallery3">
-                </a>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-image">
-                <a href="../assets/img/png/razno/ostalo/rukav-1.png" data-fancybox="gallery3" data-caption="Sleeves 1">
-                  <img src="../assets/img/png/razno/ostalo/rukav-1.png" alt="Image gallery3">
-                </a>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-image">
-                <a href="../assets/img/png/razno/ostalo/rukav-2.png" data-fancybox="gallery3" data-caption="Sleeves 2">
-                  <img src="../assets/img/png/razno/ostalo/rukav-2.png" alt="Image gallery3">
-                </a>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-image">
-                <a href="../assets/img/png/razno/ostalo/4.png" data-fancybox="gallery3" data-caption="Shorts 1">
-                  <img src="../assets/img/png/razno/ostalo/4.png" alt="Image gallery3">
-                </a>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-image">
-                <a href="../assets/img/png/razno/ostalo/5.png" data-fancybox="gallery3" data-caption="Shorts 2">
-                  <img src="../assets/img/png/razno/ostalo/5.png" alt="Image gallery3">
-                </a>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-image">
-                <a href="../assets/img/png/razno/ostalo/6.png" data-fancybox="gallery3" data-caption="Shorts 3">
-                  <img src="../assets/img/png/razno/ostalo/6.png" alt="Image gallery3">
-                </a>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-image">
-                <a href="../assets/img/png/razno/ostalo/7.png" data-fancybox="gallery3" data-caption="Shorts 4">
-                  <img src="../assets/img/png/razno/ostalo/7.png" alt="Image gallery3">
-                </a>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-image">
-                <a href="../assets/img/png/razno/ostalo/8.png" data-fancybox="gallery3" data-caption="Shorts 5">
-                  <img src="../assets/img/png/razno/ostalo/8.png" alt="Image gallery3">
-                </a>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-image">
-                <a href="../assets/img/png/razno/ostalo/9.png" data-fancybox="gallery3" data-caption="Shorts 6">
-                  <img src="../assets/img/png/razno/ostalo/9.png" alt="Image gallery3">
-                </a>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-image">
-                <a href="../assets/img/png/razno/ostalo/10.png" data-fancybox="gallery3" data-caption="Backpack 1">
-                  <img src="../assets/img/png/razno/ostalo/10.png" alt="Image gallery3">
-                </a>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-image">
-                <a href="../assets/img/png/razno/ostalo/11.png" data-fancybox="gallery3" data-caption="Backpack 2">
-                  <img src="../assets/img/png/razno/ostalo/11.png" alt="Image gallery3">
-                </a>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-image">
-                <a href="../assets/img/png/razno/ostalo/12.png" data-fancybox="gallery3" data-caption="Backpack 3">
-                  <img src="../assets/img/png/razno/ostalo/12.png" alt="Image gallery3">
-                </a>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-image">
-                <a href="../assets/img/png/razno/ostalo/13.png" data-fancybox="gallery3" data-caption="Backpack 4">
-                  <img src="../assets/img/png/razno/ostalo/13.png" alt="Image gallery3">
-                </a>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-image">
-                <a href="../assets/img/png/razno/ostalo/14.png" data-fancybox="gallery3" data-caption="Backpack 5">
-                  <img src="../assets/img/png/razno/ostalo/14.png" alt="Image gallery3">
-                </a>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-image">
-                <a href="../assets/img/png/razno/ostalo/15.png" data-fancybox="gallery3" data-caption="Backpack 6">
-                  <img src="../assets/img/png/razno/ostalo/15.png" alt="Image gallery3">
-                </a>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-image">
-                <a href="../assets/img/png/razno/ostalo/16.png" data-fancybox="gallery3" data-caption="Socks 1">
-                  <img src="../assets/img/png/razno/ostalo/16.png" alt="Image gallery3">
-                </a>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-image">
-                <a href="../assets/img/png/razno/ostalo/17.png" data-fancybox="gallery3" data-caption="Socks 2">
-                  <img src="../assets/img/png/razno/ostalo/17.png" alt="Image gallery3">
-                </a>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-image">
-                <a href="../assets/img/png/razno/ostalo/18.png" data-fancybox="gallery3" data-caption="Socks 3">
-                  <img src="../assets/img/png/razno/ostalo/18.png" alt="Image gallery3">
-                </a>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-image">
-                <a href="../assets/img/png/razno/ostalo/19.png" data-fancybox="gallery3" data-caption="Socks 4">
-                  <img src="../assets/img/png/razno/ostalo/19.png" alt="Image gallery3">
-                </a>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-image">
-                <a href="../assets/img/png/razno/ostalo/20.png" data-fancybox="gallery3" data-caption="Shin guards">
-                  <img src="../assets/img/png/razno/ostalo/20.png" alt="Image gallery3">
-                </a>
-              </div>
-            </div>
-          </div>
-        </main>
-
-      </div>
-    </section><!-- End Contact Section -->
-
-  </main><!-- End #main -->
-
-  <!-- ======= Footer ======= -->
-  <footer id="footer" class="mt-2">
-
-    <div class="footer-top justify-content-center">
-      <div class="container">
-        <div class="row justify-content-center">
-
-          <div class="col-12 col-md-6 footer-links justify-content-center text-center">
-            <h3>HOW TO REACH US</h3>
-            <p>Contact us via email, phone, Instagram, or Facebook — we’re here to help you get exactly what you need.</p>
-            <div class="social-links mt-4">
-              <a href="mailto:sportexdragan@gmail.com" class="email"><i class="bx bx-envelope"></i></a>
-              <a href="tel:+381063691711" class="phone"><i class="bx bx-phone"></i></a>
-              <a href="https://www.instagram.com/stx_sportskaoprema/" class="instagram"><i class="bx bxl-instagram"></i></a>
-              <a href="https://www.facebook.com/sportex.rs" class="facebook"><i class="bx bxl-facebook"></i></a>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-
-    <div class="container-fluid row align-items-center py-4">
-      <div class="copyright col-md-6 text-center">
-        &copy; Copyright <strong><span>Sportex Arilje</span></strong>. All Rights Reserved
-      </div>
-      <div class="credits col-md-6 text-center">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/butterfly-free-bootstrap-theme/ -->
-        Designed by <strong>Sportex Arilje</strong>
-      </div>
-    </div>
-  </footer><!-- End Footer -->
-
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Vendor JS Files -->
-  <script src="../assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="../assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="../assets/vendor/php-email-form/validate.js"></script>
-
-  <!-- Template Main JS File -->
-  <script src="../assets/js/main.js"></script>
-  <script src="../assets/js/index.js"></script>
-  <script>
-    AOS.init();
-  </script>
-
-</body>
-
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+
+<head>
+
+  <meta charset="utf-8">
+
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+
+
+  <title>Sportex Arilje - Sportswear</title>
+
+  <meta content="" name="description">
+
+  <meta content="" name="keywords">
+
+
+
+  <!-- Favicons -->
+
+  <link href="../assets/img/favicon-32x32.png" rel="icon">
+
+  <link href="../assets/img/favicon-32x32.png" rel="apple-touch-icon">
+
+
+
+  <!-- Font Awesome Icons -->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+
+
+  <!-- Google Fonts -->
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Dosis:300,400,500,,600,700,700i|Lato:300,300i,400,400i,700,700i" rel="stylesheet">
+
+
+
+  <!-- Vendor CSS Files -->
+
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+
+  <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+
+  <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+
+
+  <!-- Template Main CSS File -->
+
+  <link href="../assets/css/style-sports.css" rel="stylesheet">
+
+  <link href="../assets/css/style.css" rel="stylesheet">
+
+
+
+  <!-- JQuery -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+
+
+  <!-- AOS - Animate On Scroll -->
+
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+
+
+  <!-- FancyBox Gallery -->
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" rel="stylesheet">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+
+
+  <style>
+
+    header {
+
+      position: sticky !important;
+
+    }
+
+    main {
+
+      width: 100%;
+
+      /*height: 80vh;*/
+
+      min-height: 100vh;
+
+      /*background: url(../img/bkg/white-1.jpg), #f9f9f9;*/
+
+    }
+
+
+
+    main::before {
+
+      content: "";
+
+      position: absolute;
+
+      top: 0; 
+
+      left: 0;
+
+      width: 100%; 
+
+      height: 100%;  
+
+      opacity: .4; 
+
+      z-index: -1;
+
+      background: url(../img/bkg/white-1.jpg) !important;
+
+    }
+
+
+
+    .section-title p {
+
+      width: 70%;
+
+      margin-left: 15%;
+
+    }
+
+
+
+    .contact .php-email-form textarea {
+
+      min-height: 200px !important;
+
+    }
+
+
+
+    main a:visited, main a:link {
+
+      color: inherit !important;
+
+      text-decoration: none !important;
+
+    }
+
+
+
+    main p {
+
+      color: black !important;
+
+    }
+
+  </style>
+
+</head>
+
+
+
+<body>
+
+
+
+  <!-- ======= Header ======= -->
+
+  <header id="header" class="fixed-top">
+
+    <div class="container d-flex align-items-center justify-content-between">
+
+
+
+      <a href="../index-en.html" class="logo"><img src="../assets/img/logos/logo-3.png" alt="" class="img-fluid"></a>
+
+      <!-- Uncomment below if you prefer to use text as a logo -->
+
+      <!-- <h1 class="logo"><a href="index.html">Butterfly</a></h1> -->
+
+
+
+      <nav id="navbar" class="navbar">
+
+        <ul>
+
+          <li><a class="nav-link scrollto" href="../index-en.html#hero">Homepage</a></li>
+
+          <li><a class="nav-link scrollto" href="../index-en.html#about">About us</a></li>
+
+          <li><a class="nav-link scrollto" href="../index-en.html#services">Services</a></li>
+
+          <li><a class="nav-link scrollto" href="../index-en.html#gallery">Mini gallery</a></li>
+
+          <li class="dropdown"><a href="../equipment.html" class="nav-link active"><span>Equipment</span> <i class="bi bi-chevron-down"></i></a>
+
+            <ul>
+
+              <li><a href="../equipment.html">Equipment - homepage</a></li>
+
+              <li><a href="football-en.html">American football</a></li>
+
+              <li><a href="basketball-en.html">Basketball</a></li>
+
+              <li><a href="rugby-en.html">Rugby</a></li>
+
+              <li><a href="soccer-en.html">Football</a></li>
+
+              <li><a href="volleyball-en.html">Volleyball</a></li>
+
+              <li><a href="martial-arts-en.html">Martial arts</a></li>
+
+              <li class="active"><a href="misc-en.html">Miscellaneous</a></li>
+
+            </ul>
+
+          </li>
+
+          <li><a class="nav-link scrollto" href="../kontakt.html">Contact</a></li>
+
+          <li id="language-selector" class="dropdown">
+
+            <a class="nav-link dropdown-toggle d-flex align-items-center" href="javascript:void(0)" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+
+              <img src="../assets/img/flags/uk.svg" alt="English" class="flag-icon">
+
+              <span class="lang-name">English</span>
+
+            </a>
+
+            <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+
+              <li>
+
+                <a class="dropdown-item d-flex align-items-center" href="misc.html">
+
+                  <img src="../assets/img/flags/rs.svg" alt="Serbian" class="flag-icon">Serbian
+
+                </a>
+
+              </li>
+
+              <li>
+
+                <a class="dropdown-item d-flex align-items-center" href="javascript:void(0)">
+
+                  <img src="../assets/img/flags/uk.svg" alt="English" class="flag-icon">English
+
+                </a>
+
+              </li>
+              <li>
+                <a class="dropdown-item d-flex align-items-center" href="misc-de.html">
+                  <img src="../assets/img/flags/de.svg" alt="German" class="flag-icon">German
+                </a>
+              </li>
+
+            </ul>
+
+          </li>
+
+        </ul>
+
+        <i class="bi bi-list mobile-nav-toggle"></i>
+
+      </nav><!-- .navbar -->
+
+
+
+    </div>
+
+  </header><!-- End Header -->
+
+
+
+  <main id="main">
+
+
+
+    <!-- ======= Contact Section ======= -->
+
+    <section id="oprema" class="oprema" data-aos="zoom-in" data-aos-easing="ease-in-back" data-aos-delay="100" data-aos-duration="1000">
+
+      <div class="container">
+
+
+
+        <div class="section-title">
+
+          <h2>Sweatshirts</h2>
+
+        </div>
+
+
+
+        <main class="main">
+
+          <div class="container">
+
+            <div class="card">
+
+              <div class="card-image">
+
+                <a href="../assets/img/png/razno/duksevi/1.png" data-fancybox="gallery2" data-caption="Sweatshirt 1">
+
+                  <img src="../assets/img/png/razno/duksevi/1.png" alt="Image Gallery">
+
+                </a>
+
+              </div>
+
+            </div>
+
+            <div class="card">
+
+              <div class="card-image">
+
+                <a href="../assets/img/png/razno/duksevi/2.png" data-fancybox="gallery2" data-caption="Sweatshirt 2">
+
+                  <img src="../assets/img/png/razno/duksevi/2.png" alt="Image Gallery">
+
+                </a>
+
+              </div>
+
+            </div>
+
+            <div class="card">
+
+              <div class="card-image">
+
+                <a href="../assets/img/png/razno/duksevi/3.png" data-fancybox="gallery2" data-caption="Sweatshirt 3">
+
+                  <img src="../assets/img/png/razno/duksevi/3.png" alt="Image Gallery">
+
+                </a>
+
+              </div>
+
+            </div>
+
+            <div class="card">
+
+              <div class="card-image">
+
+                <a href="../assets/img/png/razno/duksevi/4.png" data-fancybox="gallery2" data-caption="Sweatshirt 4">
+
+                  <img src="../assets/img/png/razno/duksevi/4.png" alt="Image Gallery">
+
+                </a>
+
+              </div>
+
+            </div>
+
+            <div class="card">
+
+              <div class="card-image">
+
+                <a href="../assets/img/png/razno/duksevi/5.png" data-fancybox="gallery2" data-caption="Sweatshirt 5">
+
+                  <img src="../assets/img/png/razno/duksevi/5.png" alt="Image Gallery">
+
+                </a>
+
+              </div>
+
+            </div>
+
+            <div class="card">
+
+              <div class="card-image">
+
+                <a href="../assets/img/png/razno/duksevi/6.png" data-fancybox="gallery2" data-caption="Sweatshirt 6">
+
+                  <img src="../assets/img/png/razno/duksevi/6.png" alt="Image Gallery">
+
+                </a>
+
+              </div>
+
+            </div>
+
+            <div class="card">
+
+              <div class="card-image">
+
+                <a href="../assets/img/png/razno/duksevi/7.png" data-fancybox="gallery2" data-caption="Sweatshirt 7">
+
+                  <img src="../assets/img/png/razno/duksevi/7.png" alt="Image Gallery">
+
+                </a>
+
+              </div>
+
+            </div>
+
+            <div class="card">
+
+              <div class="card-image">
+
+                <a href="../assets/img/png/razno/duksevi/8.png" data-fancybox="gallery2" data-caption="Sweatshirt 8">
+
+                  <img src="../assets/img/png/razno/duksevi/8.png" alt="Image Gallery">
+
+                </a>
+
+              </div>
+
+            </div>
+
+            <div class="card">
+
+              <div class="card-image">
+
+                <a href="../assets/img/png/razno/duksevi/9.png" data-fancybox="gallery2" data-caption="Sweatshirt 9">
+
+                  <img src="../assets/img/png/razno/duksevi/9.png" alt="Image Gallery">
+
+                </a>
+
+              </div>
+
+            </div>
+
+            <div class="card">
+
+              <div class="card-image">
+
+                <a href="../assets/img/png/razno/duksevi/10.png" data-fancybox="gallery2" data-caption="Sweatshirt 10">
+
+                  <img src="../assets/img/png/razno/duksevi/10.png" alt="Image Gallery">
+
+                </a>
+
+              </div>
+
+            </div>
+
+            <div class="card">
+
+              <div class="card-image">
+
+                <a href="../assets/img/png/razno/duksevi/11.png" data-fancybox="gallery2" data-caption="Sweatshirt 11">
+
+                  <img src="../assets/img/png/razno/duksevi/11.png" alt="Image Gallery">
+
+                </a>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </main>
+
+
+
+        <div class="section-title">
+
+          <h2>T-shirts</h2>
+
+        </div>
+
+
+
+        <main class="main">
+
+          <div class="container">
+
+            <div class="card">
+
+              <div class="card-image">
+
+                <a href="../assets/img/png/razno/majice/1.png" data-fancybox="gallery" data-caption="Dry-fit t-shirt 1">
+
+                  <img src="../assets/img/png/razno/majice/1.png" alt="Image Gallery">
+
+                </a>
+
+              </div>
+
+            </div>
+
+            <div class="card">
+
+              <div class="card-image">
+
+                <a href="../assets/img/png/razno/majice/2.png" data-fancybox="gallery" data-caption="Dry-fit t-shirt 2">
+
+                  <img src="../assets/img/png/razno/majice/2.png" alt="Image Gallery">
+
+                </a>
+
+              </div>
+
+            </div>
+
+            <div class="card">
+
+              <div class="card-image">
+
+                <a href="../assets/img/png/razno/majice/3.png" data-fancybox="gallery" data-caption="Dry-fit t-shirt 3">
+
+                  <img src="../assets/img/png/razno/majice/3.png" alt="Image Gallery">
+
+                </a>
+
+              </div>
+
+            </div>
+
+            <div class="card">
+
+              <div class="card-image">
+
+                <a href="../assets/img/png/razno/majice/4.png" data-fancybox="gallery" data-caption="Dry-fit t-shirt 4">
+
+                  <img src="../assets/img/png/razno/majice/4.png" alt="Image Gallery">
+
+                </a>
+
+              </div>
+
+            </div>
+
+            <div class="card">
+
+              <div class="card-image">
+
+                <a href="../assets/img/png/razno/majice/5.png" data-fancybox="gallery" data-caption="Top shirt">
+
+                  <img src="../assets/img/png/razno/majice/5.png" alt="Image Gallery">
+
+                </a>
+
+              </div>
+
+            </div>
+
+            <div class="card">
+
+              <div class="card-image">
+
+                <a href="../assets/img/png/razno/majice/6.png" data-fancybox="gallery" data-caption="Polo t-shirt 1">
+
+                  <img src="../assets/img/png/razno/majice/6.png" alt="Image Gallery">
+
+                </a>
+
+              </div>
+
+            </div>
+
+            <div class="card">
+
+              <div class="card-image">
+
+                <a href="../assets/img/png/razno/majice/7.png" data-fancybox="gallery" data-caption="Polo t-shirt 2">
+
+                  <img src="../assets/img/png/razno/majice/7.png" alt="Image Gallery">
+
+                </a>
+
+              </div>
+
+            </div>
+
+            <div class="card">
+
+              <div class="card-image">
+
+                <a href="../assets/img/png/razno/majice/8.png" data-fancybox="gallery" data-caption="Polo t-shirt 3">
+
+                  <img src="../assets/img/png/razno/majice/8.png" alt="Image Gallery">
+
+                </a>
+
+              </div>
+
+            </div>
+
+            <div class="card">
+
+              <div class="card-image">
+
+                <a href="../assets/img/png/razno/majice/9.png" data-fancybox="gallery" data-caption="Polo t-shirt 4">
+
+                  <img src="../assets/img/png/razno/majice/9.png" alt="Image Gallery">
+
+                </a>
+
+              </div>
+
+            </div>
+
+            <div class="card">
+
+              <div class="card-image">
+
+                <a href="../assets/img/png/razno/majice/10.png" data-fancybox="gallery" data-caption="T-shirt 1">
+
+                  <img src="../assets/img/png/razno/majice/10.png" alt="Image Gallery">
+
+                </a>
+
+              </div>
+
+            </div>
+
+            <div class="card">
+
+              <div class="card-image">
+
+                <a href="../assets/img/png/razno/majice/11.png" data-fancybox="gallery" data-caption="T-shirt 2">
+
+                  <img src="../assets/img/png/razno/majice/11.png" alt="Image Gallery">
+
+                </a>
+
+              </div>
+
+            </div>
+
+            <div class="card">
+
+              <div class="card-image">
+
+                <a href="../assets/img/png/razno/majice/12.png" data-fancybox="gallery" data-caption="T-shirt 3">
+
+                  <img src="../assets/img/png/razno/majice/12.png" alt="Image Gallery">
+
+                </a>
+
+              </div>
+
+            </div>
+
+            <div class="card">
+
+              <div class="card-image">
+
+                <a href="../assets/img/png/razno/majice/13.png" data-fancybox="gallery" data-caption="T-shirt 4">
+
+                  <img src="../assets/img/png/razno/majice/13.png" alt="Image Gallery">
+
+                </a>
+
+              </div>
+
+            </div>
+
+            <div class="card">
+
+              <div class="card-image">
+
+                <a href="../assets/img/png/razno/majice/14.png" data-fancybox="gallery" data-caption="T-shirt 5">
+
+                  <img src="../assets/img/png/razno/majice/14.png" alt="Image Gallery">
+
+                </a>
+
+              </div>
+
+            </div>
+
+            <div class="card">
+
+              <div class="card-image">
+
+                <a href="../assets/img/png/razno/majice/15.png" data-fancybox="gallery" data-caption="T-shirt 6">
+
+                  <img src="../assets/img/png/razno/majice/15.png" alt="Image Gallery">
+
+                </a>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </main>
+
+
+
+        <div class="section-title">
+
+          <h2>Miscellaneous</h2>
+
+        </div>
+
+
+
+        <main class="main">
+
+          <div class="container">
+
+            <div class="card">
+
+              <div class="card-image">
+
+                <a href="../assets/img/png/razno/ostalo/1.png" data-fancybox="gallery3" data-caption="Jacket 1">
+
+                  <img src="../assets/img/png/razno/ostalo/1.png" alt="Image gallery3">
+
+                </a>
+
+              </div>
+
+            </div>
+
+            <div class="card">
+
+              <div class="card-image">
+
+                <a href="../assets/img/png/razno/ostalo/2.png" data-fancybox="gallery3" data-caption="Jacket 2">
+
+                  <img src="../assets/img/png/razno/ostalo/2.png" alt="Image gallery3">
+
+                </a>
+
+              </div>
+
+            </div>
+
+            <div class="card">
+
+              <div class="card-image">
+
+                <a href="../assets/img/png/razno/ostalo/3.png" data-fancybox="gallery3" data-caption="Vest">
+
+                  <img src="../assets/img/png/razno/ostalo/3.png" alt="Image gallery3">
+
+                </a>
+
+              </div>
+
+            </div>
+
+            <div class="card">
+
+              <div class="card-image">
+
+                <a href="../assets/img/png/razno/ostalo/kacket.png" data-fancybox="gallery3" data-caption="Cap">
+
+                  <img src="../assets/img/png/razno/ostalo/kacket.png" alt="Image gallery3">
+
+                </a>
+
+              </div>
+
+            </div>
+
+            <div class="card">
+
+              <div class="card-image">
+
+                <a href="../assets/img/png/razno/ostalo/kapa-1.png" data-fancybox="gallery3" data-caption="Winter cap 1">
+
+                  <img src="../assets/img/png/razno/ostalo/kapa-1.png" alt="Image gallery3">
+
+                </a>
+
+              </div>
+
+            </div>
+
+            <div class="card">
+
+              <div class="card-image">
+
+                <a href="../assets/img/png/razno/ostalo/kapa-2.png" data-fancybox="gallery3" data-caption="Winter cap 2">
+
+                  <img src="../assets/img/png/razno/ostalo/kapa-2.png" alt="Image gallery3">
+
+                </a>
+
+              </div>
+
+            </div>
+
+            <div class="card">
+
+              <div class="card-image">
+
+                <a href="../assets/img/png/razno/ostalo/rukav-1.png" data-fancybox="gallery3" data-caption="Sleeves 1">
+
+                  <img src="../assets/img/png/razno/ostalo/rukav-1.png" alt="Image gallery3">
+
+                </a>
+
+              </div>
+
+            </div>
+
+            <div class="card">
+
+              <div class="card-image">
+
+                <a href="../assets/img/png/razno/ostalo/rukav-2.png" data-fancybox="gallery3" data-caption="Sleeves 2">
+
+                  <img src="../assets/img/png/razno/ostalo/rukav-2.png" alt="Image gallery3">
+
+                </a>
+
+              </div>
+
+            </div>
+
+            <div class="card">
+
+              <div class="card-image">
+
+                <a href="../assets/img/png/razno/ostalo/4.png" data-fancybox="gallery3" data-caption="Shorts 1">
+
+                  <img src="../assets/img/png/razno/ostalo/4.png" alt="Image gallery3">
+
+                </a>
+
+              </div>
+
+            </div>
+
+            <div class="card">
+
+              <div class="card-image">
+
+                <a href="../assets/img/png/razno/ostalo/5.png" data-fancybox="gallery3" data-caption="Shorts 2">
+
+                  <img src="../assets/img/png/razno/ostalo/5.png" alt="Image gallery3">
+
+                </a>
+
+              </div>
+
+            </div>
+
+            <div class="card">
+
+              <div class="card-image">
+
+                <a href="../assets/img/png/razno/ostalo/6.png" data-fancybox="gallery3" data-caption="Shorts 3">
+
+                  <img src="../assets/img/png/razno/ostalo/6.png" alt="Image gallery3">
+
+                </a>
+
+              </div>
+
+            </div>
+
+            <div class="card">
+
+              <div class="card-image">
+
+                <a href="../assets/img/png/razno/ostalo/7.png" data-fancybox="gallery3" data-caption="Shorts 4">
+
+                  <img src="../assets/img/png/razno/ostalo/7.png" alt="Image gallery3">
+
+                </a>
+
+              </div>
+
+            </div>
+
+            <div class="card">
+
+              <div class="card-image">
+
+                <a href="../assets/img/png/razno/ostalo/8.png" data-fancybox="gallery3" data-caption="Shorts 5">
+
+                  <img src="../assets/img/png/razno/ostalo/8.png" alt="Image gallery3">
+
+                </a>
+
+              </div>
+
+            </div>
+
+            <div class="card">
+
+              <div class="card-image">
+
+                <a href="../assets/img/png/razno/ostalo/9.png" data-fancybox="gallery3" data-caption="Shorts 6">
+
+                  <img src="../assets/img/png/razno/ostalo/9.png" alt="Image gallery3">
+
+                </a>
+
+              </div>
+
+            </div>
+
+            <div class="card">
+
+              <div class="card-image">
+
+                <a href="../assets/img/png/razno/ostalo/10.png" data-fancybox="gallery3" data-caption="Backpack 1">
+
+                  <img src="../assets/img/png/razno/ostalo/10.png" alt="Image gallery3">
+
+                </a>
+
+              </div>
+
+            </div>
+
+            <div class="card">
+
+              <div class="card-image">
+
+                <a href="../assets/img/png/razno/ostalo/11.png" data-fancybox="gallery3" data-caption="Backpack 2">
+
+                  <img src="../assets/img/png/razno/ostalo/11.png" alt="Image gallery3">
+
+                </a>
+
+              </div>
+
+            </div>
+
+            <div class="card">
+
+              <div class="card-image">
+
+                <a href="../assets/img/png/razno/ostalo/12.png" data-fancybox="gallery3" data-caption="Backpack 3">
+
+                  <img src="../assets/img/png/razno/ostalo/12.png" alt="Image gallery3">
+
+                </a>
+
+              </div>
+
+            </div>
+
+            <div class="card">
+
+              <div class="card-image">
+
+                <a href="../assets/img/png/razno/ostalo/13.png" data-fancybox="gallery3" data-caption="Backpack 4">
+
+                  <img src="../assets/img/png/razno/ostalo/13.png" alt="Image gallery3">
+
+                </a>
+
+              </div>
+
+            </div>
+
+            <div class="card">
+
+              <div class="card-image">
+
+                <a href="../assets/img/png/razno/ostalo/14.png" data-fancybox="gallery3" data-caption="Backpack 5">
+
+                  <img src="../assets/img/png/razno/ostalo/14.png" alt="Image gallery3">
+
+                </a>
+
+              </div>
+
+            </div>
+
+            <div class="card">
+
+              <div class="card-image">
+
+                <a href="../assets/img/png/razno/ostalo/15.png" data-fancybox="gallery3" data-caption="Backpack 6">
+
+                  <img src="../assets/img/png/razno/ostalo/15.png" alt="Image gallery3">
+
+                </a>
+
+              </div>
+
+            </div>
+
+            <div class="card">
+
+              <div class="card-image">
+
+                <a href="../assets/img/png/razno/ostalo/16.png" data-fancybox="gallery3" data-caption="Socks 1">
+
+                  <img src="../assets/img/png/razno/ostalo/16.png" alt="Image gallery3">
+
+                </a>
+
+              </div>
+
+            </div>
+
+            <div class="card">
+
+              <div class="card-image">
+
+                <a href="../assets/img/png/razno/ostalo/17.png" data-fancybox="gallery3" data-caption="Socks 2">
+
+                  <img src="../assets/img/png/razno/ostalo/17.png" alt="Image gallery3">
+
+                </a>
+
+              </div>
+
+            </div>
+
+            <div class="card">
+
+              <div class="card-image">
+
+                <a href="../assets/img/png/razno/ostalo/18.png" data-fancybox="gallery3" data-caption="Socks 3">
+
+                  <img src="../assets/img/png/razno/ostalo/18.png" alt="Image gallery3">
+
+                </a>
+
+              </div>
+
+            </div>
+
+            <div class="card">
+
+              <div class="card-image">
+
+                <a href="../assets/img/png/razno/ostalo/19.png" data-fancybox="gallery3" data-caption="Socks 4">
+
+                  <img src="../assets/img/png/razno/ostalo/19.png" alt="Image gallery3">
+
+                </a>
+
+              </div>
+
+            </div>
+
+            <div class="card">
+
+              <div class="card-image">
+
+                <a href="../assets/img/png/razno/ostalo/20.png" data-fancybox="gallery3" data-caption="Shin guards">
+
+                  <img src="../assets/img/png/razno/ostalo/20.png" alt="Image gallery3">
+
+                </a>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </main>
+
+
+
+      </div>
+
+    </section><!-- End Contact Section -->
+
+
+
+  </main><!-- End #main -->
+
+
+
+  <!-- ======= Footer ======= -->
+
+  <footer id="footer" class="mt-2">
+
+
+
+    <div class="footer-top justify-content-center">
+
+      <div class="container">
+
+        <div class="row justify-content-center">
+
+
+
+          <div class="col-12 col-md-6 footer-links justify-content-center text-center">
+
+            <h3>HOW TO REACH US</h3>
+
+            <p>Contact us via email, phone, Instagram, or Facebook — we’re here to help you get exactly what you need.</p>
+
+            <div class="social-links mt-4">
+
+              <a href="mailto:sportexdragan@gmail.com" class="email"><i class="bx bx-envelope"></i></a>
+
+              <a href="tel:+381063691711" class="phone"><i class="bx bx-phone"></i></a>
+
+              <a href="https://www.instagram.com/stx_sportskaoprema/" class="instagram"><i class="bx bxl-instagram"></i></a>
+
+              <a href="https://www.facebook.com/sportex.rs" class="facebook"><i class="bx bxl-facebook"></i></a>
+
+            </div>
+
+          </div>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+    <div class="container-fluid row align-items-center py-4">
+
+      <div class="copyright col-md-6 text-center">
+
+        &copy; Copyright <strong><span>Sportex Arilje</span></strong>. All Rights Reserved
+
+      </div>
+
+      <div class="credits col-md-6 text-center">
+
+        <!-- All the links in the footer should remain intact. -->
+
+        <!-- You can delete the links only if you purchased the pro version. -->
+
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/butterfly-free-bootstrap-theme/ -->
+
+        Designed by <strong>Sportex Arilje</strong>
+
+      </div>
+
+    </div>
+
+  </footer><!-- End Footer -->
+
+
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+
+
+  <!-- Vendor JS Files -->
+
+  <script src="../assets/vendor/purecounter/purecounter_vanilla.js"></script>
+
+  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <script src="../assets/vendor/glightbox/js/glightbox.min.js"></script>
+
+  <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+  <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <script src="../assets/vendor/php-email-form/validate.js"></script>
+
+
+
+  <!-- Template Main JS File -->
+
+  <script src="../assets/js/main.js"></script>
+
+  <script src="../assets/js/index.js"></script>
+
+  <script>
+
+    AOS.init();
+
+  </script>
+
+
+
+</body>
+
+
+
 </html>
