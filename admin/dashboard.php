@@ -44,7 +44,8 @@ if (isset($_GET['logout'])) {
     <title>Sportex Admin Dashboard</title>
     <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/dropzone.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
     <style>
         :root {
             --sportex-red: #b22222;
@@ -172,6 +173,12 @@ if (isset($_GET['logout'])) {
             text-align: center;
         }
         
+        .image-name .text-muted {
+            display: block;
+            font-size: 0.8rem;
+            opacity: 0.7;
+        }
+        
         .stats-card {
             background: linear-gradient(135deg, #4CAF50, #45a049);
             color: white;
@@ -191,6 +198,39 @@ if (isset($_GET['logout'])) {
         .alert-custom {
             border-radius: 8px;
             border: none;
+        }
+
+        .subdirs {
+            text-align: left;
+            font-size: 0.9em;
+        }
+
+        .subdir-item {
+            padding: 4px 8px;
+            margin: 2px 0;
+            background: rgba(178, 34, 34, 0.05);
+            border-radius: 4px;
+        }
+
+        .subdir-item i {
+            margin-right: 4px;
+            color: var(--sportex-red);
+        }
+
+        .total-count {
+            font-weight: bold;
+            color: var(--sportex-red);
+        }
+        
+        .badge {
+            background-color: rgba(178, 34, 34, 0.1) !important;
+            color: var(--sportex-red) !important;
+            font-weight: 600;
+            padding: 0.25em 0.6em;
+            margin-left: 0.5em;
+        }
+        i.bi.bi-folder:hover {
+            text-shadow: 1px 1px 2px #b22222;
         }
     </style>
 </head>
@@ -216,16 +256,16 @@ if (isset($_GET['logout'])) {
             <!-- Sidebar -->
             <div class="col-md-2 sidebar p-0">
                 <div class="nav flex-column p-3">
-                    <a class="nav-link active" href="#dashboard" onclick="showSection('dashboard')">
+                    <a class="nav-link active" href="javascript:void(0);" onclick="showSection('dashboard')">
                         <i class="bi bi-speedometer2"></i> Dashboard
                     </a>
-                    <a class="nav-link" href="#images" onclick="showSection('images')">
+                    <a class="nav-link" href="javascript:void(0);" onclick="showSection('images')">
                         <i class="bi bi-images"></i> Manage Images
                     </a>
-                    <a class="nav-link" href="#upload" onclick="showSection('upload')">
+                    <a class="nav-link" href="javascript:void(0);" onclick="showSection('upload')">
                         <i class="bi bi-cloud-upload"></i> Upload Images
                     </a>
-                    <a class="nav-link" href="#categories" onclick="showSection('categories')">
+                    <a class="nav-link" href="javascript:void(0);" onclick="showSection('categories')">
                         <i class="bi bi-tags"></i> Categories
                     </a>
                 </div>
@@ -279,17 +319,17 @@ if (isset($_GET['logout'])) {
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-md-4">
-                                    <button class="btn btn-sportex w-100" onclick="showSection('upload')">
+                                    <button class="btn btn-sportex w-100" onclick="showSection('upload'); return false;">
                                         <i class="bi bi-cloud-upload"></i> Upload New Images
                                     </button>
                                 </div>
                                 <div class="col-md-4">
-                                    <button class="btn btn-outline-secondary w-100" onclick="showSection('images')">
+                                    <button class="btn btn-outline-secondary w-100" onclick="showSection('images'); return false;">
                                         <i class="bi bi-images"></i> Browse Images
                                     </button>
                                 </div>
                                 <div class="col-md-4">
-                                    <button class="btn btn-outline-info w-100" onclick="refreshStats()">
+                                    <button class="btn btn-outline-info w-100" onclick="refreshStats(); return false;">
                                         <i class="bi bi-arrow-clockwise"></i> Refresh Stats
                                     </button>
                                 </div>
@@ -308,15 +348,25 @@ if (isset($_GET['logout'])) {
                         </div>
                         <div class="card-body">
                             <div class="category-selector">
-                                <label for="category-select">Select Category:</label>
-                                <select id="category-select" class="form-select" onchange="loadImages()">
-                                    <option value="">Choose a category...</option>
-                                    <?php foreach ($categories as $category): ?>
-                                        <option value="<?php echo htmlspecialchars($category); ?>">
-                                            <?php echo htmlspecialchars($category); ?>
-                                        </option>
-                                    <?php endforeach; ?>
-                                </select>
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="category-select">Select Category:</label>
+                                        <select id="category-select" class="form-select" onchange="loadDirectoryStructure()">
+                                            <option value="">Choose a category...</option>
+                                            <?php foreach ($categories as $category): ?>
+                                                <option value="<?php echo htmlspecialchars($category); ?>">
+                                                    <?php echo htmlspecialchars($category); ?>
+                                                </option>
+                                            <?php endforeach; ?>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="subdir-select">Select Subdirectory:</label>
+                                        <select id="subdir-select" class="form-select" onchange="loadImages()">
+                                            <option value="">Root directory</option>
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
                             
                             <div id="images-container" class="image-gallery">
@@ -335,25 +385,35 @@ if (isset($_GET['logout'])) {
                             <h5>Upload New Images</h5>
                         </div>
                         <div class="card-body">
-                            <div class="mb-3">
-                                <label for="upload-category">Select Category:</label>
-                                <select id="upload-category" class="form-select">
-                                    <option value="">Choose category...</option>
-                                    <?php foreach ($categories as $category): ?>
-                                        <option value="<?php echo htmlspecialchars($category); ?>">
-                                            <?php echo htmlspecialchars($category); ?>
-                                        </option>
-                                    <?php endforeach; ?>
-                                </select>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="upload-category">Select Category:</label>
+                                    <select id="upload-category" class="form-select" onchange="loadUploadDirectoryStructure()">
+                                        <option value="">Choose category...</option>
+                                        <?php foreach ($categories as $category): ?>
+                                            <option value="<?php echo htmlspecialchars($category); ?>">
+                                                <?php echo htmlspecialchars($category); ?>
+                                            </option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="upload-subdir">Select Subdirectory:</label>
+                                    <select id="upload-subdir" class="form-select">
+                                        <option value="">Root directory</option>
+                                    </select>
+                                </div>
                             </div>
                             
-                            <div id="upload-dropzone" class="dropzone">
+                            <form id="upload-dropzone" class="dropzone" action="upload_handler.php" method="post">
+                                <input type="hidden" name="category" id="dropzone-category">
+                                <input type="hidden" name="subdir" id="dropzone-subdir">
                                 <div class="dz-message">
                                     <i class="bi bi-cloud-upload" style="font-size: 3rem; color: var(--sportex-red);"></i>
                                     <p><strong>Drop files here or click to upload</strong></p>
                                     <p class="text-muted">Supports: JPG, PNG, GIF (Max: 5MB each)</p>
                                 </div>
-                            </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -371,12 +431,15 @@ if (isset($_GET['logout'])) {
                                 <?php foreach ($categories as $category): ?>
                                     <div class="col-md-4 mb-3">
                                         <div class="card">
-                                            <div class="card-body text-center">
-                                                <i class="bi bi-folder" style="font-size: 2rem; color: var(--sportex-red);"></i>
-                                                <h6 class="mt-2"><?php echo htmlspecialchars($category); ?></h6>
-                                                <small class="text-muted" id="count-<?php echo htmlspecialchars($category); ?>">
-                                                    Loading...
-                                                </small>
+                                            <div class="card-body">
+                                                <div class="text-center">
+                                                    <i class="bi bi-folder" style="font-size: 2rem; color: var(--sportex-red);"></i>
+                                                    <h6 class="mt-2"><?php echo htmlspecialchars($category); ?></h6>
+                                                </div>
+                                                <div class="mt-3">
+                                                    <p class="mb-2">Total:&nbsp;<span class="total-count" id="count-<?php echo preg_replace('/[^a-zA-Z0-9-]/', '-', $category); ?>">Loading...</span></p>
+                                                    <div class="subdirs" id="subdirs-<?php echo preg_replace('/[^a-zA-Z0-9-]/', '-', $category); ?>"></div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -417,7 +480,13 @@ if (isset($_GET['logout'])) {
     </div>
 
     <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/min/dropzone.min.js"></script>
     <script src="admin.js"></script>
+    <script>
+        // Verify Dropzone is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Dropzone loaded:', typeof Dropzone !== 'undefined');
+            console.log('Upload form found:', document.getElementById('upload-dropzone'));
+        });
+    </script>
 </body>
 </html>

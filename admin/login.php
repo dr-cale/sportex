@@ -65,6 +65,7 @@ if ($_POST) {
             overflow: hidden;
             max-width: 400px;
             width: 100%;
+            padding: 3px;
         }
         
         .login-header {
@@ -72,6 +73,7 @@ if ($_POST) {
             color: white;
             text-align: center;
             padding: 30px;
+            border-radius: 15px 15px 0 0;
         }
         
         .login-header h3 {
@@ -123,16 +125,21 @@ if ($_POST) {
         }
         
         .sportex-logo {
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .sportex-logo img {
+            max-height: 60px;
+            filter: brightness(0) invert(1);
         }
     </style>
 </head>
 <body>
     <div class="login-container">
         <div class="login-header">
-            <div class="sportex-logo">SPORTEX</div>
+            <div class="sportex-logo">
+                <img src="../assets/img/logos/logo-3.png" alt="SPORTEX">
+            </div>
             <h3>Admin Dashboard</h3>
             <p class="mb-0">Please sign in to continue</p>
         </div>

@@ -15,19 +15,74 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit;
 }
 
+// Get upload parameters
 $category = $_POST['category'] ?? '';
+$subdir = $_POST['subdir'] ?? '';
+
+error_log("=== UPLOAD DEBUG START ===");
+error_log("RAW Category: '$category'");
+error_log("RAW Subdir: '$subdir'");
+error_log("POST data: " . print_r($_POST, true));
+
 if (empty($category)) {
-    echo json_encode(['success' => false, 'message' => 'Category is required']);
+    error_log("Error: Category is empty. POST keys: " . implode(', ', array_keys($_POST)));
+    echo json_encode([
+        'success' => false, 
+        'message' => 'Category is required',
+        'debug' => [
+            'post' => $_POST,
+            'files' => array_keys($_FILES),
+            'content_type' => $_SERVER['CONTENT_TYPE'] ?? 'unknown'
+        ]
+    ]);
     exit;
 }
 
-$upload_dir = '../assets/img/png/' . $category . '/';
+// Clean category and subdir - SIMPLE APPROACH
+$category = trim($category);
+$subdir = trim($subdir);
 
-// Check if category directory exists
-if (!is_dir($upload_dir)) {
-    echo json_encode(['success' => false, 'message' => 'Category directory does not exist']);
+// Remove dangerous stuff
+$category = str_replace(['..', '\\'], '', $category);
+$subdir = str_replace(['..', '\\'], '', $subdir);
+
+error_log("CLEANED - Category: '$category', Subdir: '$subdir'");
+
+// Build paths step by step
+$base_path = '../assets/img/png';
+$category_path = $base_path . '/' . $category;
+
+error_log("Category path: '$category_path'");
+
+// Check category exists
+if (!is_dir($category_path)) {
+    error_log("ERROR: Category path does not exist: '$category_path'");
+    echo json_encode(['success' => false, 'message' => 'Category not found: ' . $category]);
     exit;
 }
+
+// IMPORTANT: The subdir should be the EXACT path relative to the category
+// If subdir is "muski", we want kosarka/muski/, NOT kosarka/muski/muski/
+if (!empty($subdir)) {
+    $upload_directory = $category_path . '/' . $subdir;
+    error_log("Upload directory with subdir: '$upload_directory'");
+    
+    // Create if doesn't exist
+    if (!is_dir($upload_directory)) {
+        error_log("Creating directory: '$upload_directory'");
+        if (!mkdir($upload_directory, 0755, true)) {
+            error_log("FAILED to create directory: '$upload_directory'");
+            echo json_encode(['success' => false, 'message' => 'Cannot create directory']);
+            exit;
+        }
+    }
+} else {
+    $upload_directory = $category_path;
+    error_log("Using category root: '$upload_directory'");
+}
+
+error_log("FINAL upload directory: '$upload_directory'");
+error_log("=== UPLOAD DEBUG END ===");
 
 // Check if file was uploaded
 if (!isset($_FILES['file'])) {
@@ -83,21 +138,33 @@ $new_filename = $file_name . '.' . $file_extension;
 
 // Check if file already exists, add number suffix if needed
 $counter = 1;
-while (file_exists($upload_dir . $new_filename)) {
+while (file_exists($upload_directory . '/' . $new_filename)) {
     $new_filename = $file_name . '_' . $counter . '.' . $file_extension;
     $counter++;
 }
 
-$destination = $upload_dir . $new_filename;
+$destination = $upload_directory . '/' . $new_filename;
+
+// Check write permissions
+if (!is_writable($upload_directory)) {
+    error_log("Error: Upload directory is not writable: " . $upload_directory);
+    echo json_encode(['success' => false, 'message' => 'Upload directory is not writable']);
+    exit;
+}
 
 // Move uploaded file
+error_log("Attempting to move file from {$file['tmp_name']} to {$destination}");
 if (!move_uploaded_file($file['tmp_name'], $destination)) {
+    error_log("Error: Failed to move uploaded file. PHP error: " . error_get_last()['message']);
     echo json_encode(['success' => false, 'message' => 'Failed to move uploaded file']);
     exit;
 }
 
 // Set proper file permissions
-chmod($destination, 0644);
+error_log("Setting file permissions for: " . $destination);
+if (!chmod($destination, 0644)) {
+    error_log("Warning: Failed to set file permissions");
+}
 
 echo json_encode([
     'success' => true,

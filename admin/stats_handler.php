@@ -22,21 +22,44 @@ try {
                 return $item !== '.' && $item !== '..' && is_dir($base_path . $item);
             });
             
-            foreach ($dirs as $dir) {
-                $category_path = $base_path . $dir;
-                $files = scandir($category_path);
-                $image_count = 0;
+            function countImagesInDir($dir_path) {
+                $structure = array(
+                    'count' => 0,
+                    'subdirs' => array()
+                );
                 
+                if (!is_dir($dir_path)) {
+                    error_log("Not a directory: {$dir_path}");
+                    return $structure;
+                }
+                
+                $files = scandir($dir_path);
                 foreach ($files as $file) {
-                    if ($file !== '.' && $file !== '..' && !is_dir($category_path . '/' . $file)) {
+                    if ($file === '.' || $file === '..') continue;
+                    
+                    $path = $dir_path . '/' . $file;
+                    if (is_dir($path)) {
+                        $subdir_result = countImagesInDir($path);
+                        if ($subdir_result['count'] > 0 || !empty($subdir_result['subdirs'])) {
+                            $structure['subdirs'][basename($path)] = $subdir_result;
+                            $structure['count'] += $subdir_result['count'];
+                        }
+                    } else {
                         $extension = strtolower(pathinfo($file, PATHINFO_EXTENSION));
                         if (in_array($extension, ['jpg', 'jpeg', 'png', 'gif'])) {
-                            $image_count++;
+                            $structure['count']++;
                         }
                     }
                 }
                 
-                $categories[$dir] = $image_count;
+                error_log("Directory {$dir_path} has {$structure['count']} images and " . count($structure['subdirs']) . " subdirs");
+                return $structure;
+            }
+            
+            foreach ($dirs as $dir) {
+                $category_path = $base_path . $dir;
+                $result = countImagesInDir($category_path);
+                $categories[$dir] = $result;
             }
         }
         
@@ -51,29 +74,37 @@ try {
         $today = date('Y-m-d');
         
         if (is_dir($base_path)) {
-            $dirs = array_filter(scandir($base_path), function($item) use ($base_path) {
-                return $item !== '.' && $item !== '..' && is_dir($base_path . $item);
-            });
-            
-            foreach ($dirs as $dir) {
-                $category_path = $base_path . $dir;
-                $files = scandir($category_path);
+            function countRecursively($path, &$total_images, &$recent_uploads, $today) {
+                if (!is_dir($path)) return;
                 
+                $files = scandir($path);
                 foreach ($files as $file) {
-                    if ($file !== '.' && $file !== '..' && !is_dir($category_path . '/' . $file)) {
+                    if ($file === '.' || $file === '..') continue;
+                    
+                    $full_path = $path . '/' . $file;
+                    if (is_dir($full_path)) {
+                        countRecursively($full_path, $total_images, $recent_uploads, $today);
+                    } else {
                         $extension = strtolower(pathinfo($file, PATHINFO_EXTENSION));
                         if (in_array($extension, ['jpg', 'jpeg', 'png', 'gif'])) {
                             $total_images++;
                             
-                            // Check if file was modified today (recent upload)
-                            $file_path = $category_path . '/' . $file;
-                            $file_date = date('Y-m-d', filemtime($file_path));
+                            $file_date = date('Y-m-d', filemtime($full_path));
                             if ($file_date === $today) {
                                 $recent_uploads++;
                             }
                         }
                     }
                 }
+            }
+            
+            $dirs = array_filter(scandir($base_path), function($item) use ($base_path) {
+                return $item !== '.' && $item !== '..' && is_dir($base_path . $item);
+            });
+            
+            foreach ($dirs as $dir) {
+                $category_path = $base_path . $dir;
+                countRecursively($category_path, $total_images, $recent_uploads, $today);
             }
         }
         
